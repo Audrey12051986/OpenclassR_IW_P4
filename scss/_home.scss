@@ -1,0 +1,406 @@
+$font-family-1: "Roboto", sans-serif;
+$main-color: #9356dc;
+$gradient-main-color: #ff79da;
+$second-color: #003a68;
+$filter-second-color: #89c8fa;
+$thirth-color: #008766;
+$filter-thirth-color: #99e2d0;
+$fourth-color: #eaeaea;
+$bg-color-section: #f6f6f6;
+$bg-color-footer: #353535;
+$bg-color-section2: #ffffff;
+$color-fonction-icon: #7e7e7e;
+$title-color: #101010;
+
+@mixin font__family-1 {
+  font-family: roboto;
+}
+
+@mixin font__family-2 {
+  font-family: shrikhand;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin background-clip {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  max-width: 1440px;
+  /*max-width: 768px;*/
+  min-width: 320px;
+  @include font__family-1;
+}
+/*
+.loaderout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color-section;
+
+  .loader {
+    border: 10px solid $bg-color-section;
+    border-top: 10px solid $main-color;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+}
+*/
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 1;
+
+  &__logo {
+    height: 63px;
+    width: 100%;
+    @include font__family-2;
+    font-size: 30px;
+    color: $title-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &__form {
+    height: 50px;
+    width: 100%;
+    background-color: $fourth-color;
+    text-align: center;
+    padding: 0;
+
+    &--icon {
+      color: $bg-color-footer;
+      padding: 17px;
+    }
+  }
+
+  &__style {
+    font-family: $font-family-1;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: $bg-color-section;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    &__button {
+      background: linear-gradient($main-color, $gradient-main-color);
+      color: $bg-color-section2;
+      border: none;
+      padding: 20px;
+      font-size: 16px;
+      height: 50px;
+      font-weight: 500;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: background 300ms ease-out, box-shadow 300ms ease-out,
+        opacity 300ms ease-out;
+
+      &:hover {
+        background: linear-gradient($gradient-main-color, $main-color);
+        opacity: 0.85;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+}
+
+.fonction {
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  gap: 25px;
+  background: $bg-color-section2;
+  margin: 0;
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 72px;
+    width: calc(100% - 40px);
+    margin: 10px 20px; // 20px de margin à gauche et à droite pour ajouter un espace de 20px de chaque côté
+    padding: 20px;
+    background: $bg-color-section;
+    box-shadow: 2px 3px 20px $bg-color-section2;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    box-sizing: border-box;
+    text-decoration: none;
+    /*overflow: hidden;*/
+
+    &_list__number {
+      position: absolute;
+      left: -15px; // Positionnez le numéro à gauche, chevauchant le bord du bouton
+      /*p: 50%;*/
+      background-color: $main-color;
+      color: $bg-color-section2;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &__text {
+      /*width: 211px;*/
+      font-family: "Roboto", sans-serif;
+      font-style: normal;
+      line-height: 1.2rem;
+      font-weight: 300;
+      font-size: 16px;
+      /*align-self: center;*/
+      flex-grow: 1; // Prend l'espace restant pour centrer le texte
+      text-align: center;
+    }
+  }
+}
+
+.choose {
+  display: none;
+
+  &:checked + label .choose__like .button__icon--yes {
+    display: inline-block;
+    color: $main-color;
+  }
+
+  &:not(:checked) + label .choose__like .button__icon--no {
+    display: inline-block;
+    color: $bg-color-footer;
+  }
+}
+
+.choose + label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%; // Prendre toute la largeur du bouton
+
+  .choose__like {
+    display: flex;
+    align-items: center;
+    /*justify-content: space-between;*/
+    /* width: 100%;*/
+    /*padding: 10px;*/
+    /*border: 2px solid #ccc;*/
+    border-radius: 5px;
+    /*justify-content: center;*/
+
+    .button__icon--no,
+    .button__icon--yes {
+      display: none;
+      margin-right: 10px; // Espace entre l'icône et le texte
+    }
+  }
+}
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 20px;
+  background-color: $bg-color-section;
+  /*width: 100%;*/
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-color-section2;
+    border: 1px solid $bg-color-section2;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    /* width: calc(100% - 40px);*/
+
+    /* &__img {
+      display: block;
+    }*/
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+
+      .card__txt {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        color: $title-color;
+
+        .card__title {
+          font-size: 18px;
+          margin: 0;
+          font-weight: bold;
+        }
+
+        .card__subtitle {
+          font-size: 17px;
+          font-weight: 200;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.like {
+  display: none;
+
+  &:checked + label .restaurants__like .restaurants__like--bg {
+    display: inline-block;
+    background: linear-gradient(45deg, $main-color, $gradient-main-color);
+    @include background-clip;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s;
+  }
+
+  &:checked + label .restaurants__like .restaurants__like--nobg {
+    display: none;
+  }
+
+  &:not(:checked) + label .restaurants__like .restaurants__like--nobg {
+    display: inline-block;
+    color: $title-color;
+    font-weight: 200;
+  }
+
+  &:not(:checked) + label .restaurants__like .restaurants__like--bg {
+    display: none;
+  }
+}
+
+.like + label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  .restaurants__like {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 50px;*/
+    padding: 5px;
+
+    /*  .restaurant__like .restaurant__like--bg,
+    .restaurant__like .restaurant__like--nobg {
+      display: none;
+    }*/
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: $bg-color-footer;
+  color: $bg-color-section2;
+  padding: 22px 25px;
+
+  &__title {
+    @include font__family-2;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    list-style: none; // Supprime les puces de la liste
+    padding: 0; // Retire les padding par défaut
+    margin: 0; // Retire les marges par défaut
+  }
+
+  .footer__link {
+    text-decoration: none; // Supprime les soulignements des liens
+    color: inherit; // Inhérente la couleur du parent
+    display: flex;
+    align-items: center;
+
+    &--icon {
+      margin-right: 7px;
+      font-size: 13px;
+    }
+  }
+}
