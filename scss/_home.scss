@@ -36,36 +36,70 @@ $title-color: #101010;
   }
 }
 
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 body {
+  margin: 0;
+  padding: 0;
+  /*width: 100%;*/
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 1440px;
+  min-width: 320px;
+  @include font__family-1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
-  max-width: 1440px;
-  /*max-width: 768px;*/
-  min-width: 320px;
-  @include font__family-1;
 }
-/*
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.header,
+.main,
+.footer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .loaderout {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  width: 100%;
   height: 100%;
-  background-color: $bg-color-section;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /*transition: opacity 0.5s ease, visibility 0.5s ease;*/
+  animation: loader 0.5s ease-out;
 
   .loader {
-    border: 10px solid $bg-color-section;
-    border-top: 10px solid $main-color;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #ff79da;
+    border-right: 10px solid #9356dc;
+    border-bottom: 10px solid #ff79da;
+    border-left: 10px solid #9356dc;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.2s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
   }
 }
-*/
+
+.hide_loader {
+  animation: fadeOut 1.2s forwards;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -112,6 +146,8 @@ body {
   align-items: center;
   gap: 30px;
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 
   .title {
     display: flex;
@@ -174,7 +210,6 @@ body {
     justify-content: center;
     position: relative;
     height: 72px;
-    width: calc(100% - 40px);
     margin: 10px 20px; // 20px de margin à gauche et à droite pour ajouter un espace de 20px de chaque côté
     padding: 20px;
     background: $bg-color-section;
@@ -185,7 +220,6 @@ body {
     font-weight: 500;
     box-sizing: border-box;
     text-decoration: none;
-    /*overflow: hidden;*/
 
     &_list__number {
       position: absolute;
@@ -223,11 +257,13 @@ body {
   &:checked + label .choose__like .button__icon--yes {
     display: inline-block;
     color: $main-color;
+    margin: 0 30px 0 20px;
   }
 
   &:not(:checked) + label .choose__like .button__icon--no {
     display: inline-block;
     color: $bg-color-footer;
+    margin: 0 30px 0 20px;
   }
 }
 
@@ -235,7 +271,6 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  width: 100%; // Prendre toute la largeur du bouton
 
   .choose__like {
     display: flex;
@@ -250,18 +285,19 @@ body {
     .button__icon--no,
     .button__icon--yes {
       display: none;
-      margin-right: 10px; // Espace entre l'icône et le texte
+      margin-right: 20px; // Espace entre l'icône et le texte
     }
   }
 }
 
 .restaurants {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 18px;
   padding: 20px;
   background-color: $bg-color-section;
-  /*width: 100%;*/
+  width: 100%;
+  overflow: hidden;
 
   h2 {
     font-size: 24px;
@@ -270,9 +306,11 @@ body {
   }
 
   &__cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 18px;
+    width: 100%;
+    position: relative;
   }
 
   .card {
@@ -281,13 +319,17 @@ body {
     background-color: $bg-color-section2;
     border: 1px solid $bg-color-section2;
     border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     text-decoration: none;
-    /* width: calc(100% - 40px);*/
-
-    /* &__img {
-      display: block;
-    }*/
+    box-sizing: border-box;
+    img {
+      width: 100%;
+      height: 174px;
+      object-fit: cover;
+      overflow: hidden;
+    }
 
     &__content {
       display: flex;
@@ -317,11 +359,20 @@ body {
   }
 }
 
-.card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  overflow: hidden;
+.card__new {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: $filter-thirth-color;
+  border-radius: 2px;
+
+  .card__newtext {
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    color: $thirth-color;
+    padding: 8px;
+  }
 }
 
 .like {
