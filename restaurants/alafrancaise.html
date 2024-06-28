@@ -21,7 +21,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/scss/restaurant.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
 
   <body>
@@ -35,7 +35,7 @@
     <main>
       <img
         class="banner__img"
-        src="/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+        src="/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
         alt="Image d'un plat"
       />
       <section class="restaurant">
@@ -52,113 +52,187 @@
         <div class="menu">
           <section class="menu__list">
             <h3>ENTRÉES</h3>
-            <div class="card-container">
-              <article class="card">
-                <input type="checkbox" id="check" class="confirmation__card" />
-                <label for="check">
-                  <div class="card__content">
-                    <div class="card__txt">
-                      <h4 class="card__title">Tartare de poulpe acidulé</h4>
-                      <p class="card__subtitle">Aux zestes d'orange</p>
+            <div class="cardrest_container">
+              <article class="cardrest">
+                <input type="checkbox" id="check1" class="confirmation__card" />
+                <label for="check1">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Tartare de poulpe acidulé</h4>
+                      <p class="cardrest__subtitle">Aux zestes d'orange</p>
                     </div>
 
-                    <span class="card__price">25€</span>
+                    <span class="cardrest__price">25€</span>
                     <div class="menu__confirmation">
-                      <div class="menu__wrapicon">
-                        <i class="menu__icon--no fas fa-check"></i>
-                        <i class="menu__icon--yes fas fa-check"></i>
-                      </div>
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
                     </div>
                   </div>
                 </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Velouté de légumes d'antan</h4>
-                    <p class="card__subtitle">Carotte, panais, topinambour</p>
+              <article class="cardrest">
+                <input type="checkbox" id="check2" class="confirmation__card" />
+                <label for="check2">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">
+                        Velouté de légumes d'antan
+                      </h4>
+                      <p class="cardrest__subtitle">
+                        Carotte, panais, topinambour
+                      </p>
+                    </div>
+                    <span class="cardrest__price">35€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">35€</span>
+                </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Soupe à l'oignon</h4>
-                    <p class="card__subtitle">Revisitée</p>
+              <article class="cardrest">
+                <input type="checkbox" id="check3" class="confirmation__card" />
+                <label for="check3">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Soupe à l'oignon</h4>
+                      <p class="cardrest__subtitle">Revisitée</p>
+                    </div>
+                    <span class="cardrest__price">20€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">20€</span>
+                </label>
               </article>
             </div>
           </section>
           <section class="menu__list">
             <h3>PLATS</h3>
-            <div class="card-container">
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Coquilles Saint-Jacques</h4>
-                    <p class="card__subtitle">
-                      Accompagnée d'une purée de panais
-                    </p>
+            <div class="cardrest_container">
+              <article class="cardrest">
+                <input type="checkbox" id="check4" class="confirmation__card" />
+                <label for="check4">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Coquilles Saint-Jacques</h4>
+                      <p class="cardrest__subtitle">
+                        Accompagnée d'une purée de panais
+                      </p>
+                    </div>
+
+                    <span class="cardrest__price">40€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">40€ </span>
+                </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Magret de canard</h4>
-                    <p class="card__subtitle">
-                      Et parmentier de pomme de terre
-                    </p>
+              <article class="cardrest">
+                <input type="checkbox" id="check5" class="confirmation__card" />
+                <label for="check5">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Magret de canard</h4>
+                      <p class="cardrest__subtitle">
+                        Et parmentier de pomme de terre
+                      </p>
+                    </div>
+                    <span class="cardrest__price">35€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">35€ </span>
+                </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Pigeanneau d'Ille-et-Vilaine</h4>
-                    <p class="card__subtitle">
-                      Sur son lit de gnocchis aux légumes
-                    </p>
+              <article class="cardrest">
+                <input type="checkbox" id="check6" class="confirmation__card" />
+                <label for="check6">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">
+                        Pigeaunneau d'Ille-et-Vilaine
+                      </h4>
+                      <p class="cardrest__subtitle">
+                        Sur son lit de gnocchis aux légumes
+                      </p>
+                    </div>
+                    <span class="cardrest__price">44€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">44€</span>
+                </label>
               </article>
             </div>
           </section>
           <section class="menu__list">
             <h3>DESSERTS</h3>
-            <div class="card-container">
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Pétales de violettes glacés</h4>
-                    <p class="card__subtitle">Et purée de noisettes</p>
+            <div class="cardrest_container">
+              <article class="cardrest">
+                <input type="checkbox" id="check7" class="confirmation__card" />
+                <label for="check7">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">
+                        Pétales de violettes glacés
+                      </h4>
+                      <p class="cardrest__subtitle">Et purée de noisettes</p>
+                    </div>
+                    <span class="cardrest__price">18€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">18€</span>
+                </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Fondant au chocolat</h4>
-                    <p class="card__subtitle">Revisité</p>
+              <article class="cardrest">
+                <input type="checkbox" id="check8" class="confirmation__card" />
+                <label for="check8">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Fondant au chocolat</h4>
+                      <p class="cardrest__subtitle">Revisité</p>
+                    </div>
+                    <span class="cardrest__price">22€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">22€</span>
+                </label>
               </article>
-              <article class="card">
-                <div class="card__content">
-                  <div class="card__txt">
-                    <h4 class="card__title">Millefeuille croustillant</h4>
-                    <p class="card__subtitle">Myrtilles et pâte d'amande</p>
+              <article class="cardrest">
+                <input type="checkbox" id="check9" class="confirmation__card" />
+                <label for="check9">
+                  <div class="cardrest__content">
+                    <div class="cardrest__txt">
+                      <h4 class="cardrest__title">Millefeuille croustillant</h4>
+                      <p class="cardrest__subtitle">
+                        Myrtilles et pâte d'amande
+                      </p>
+                    </div>
+                    <span class="cardrest__price">23€</span>
+                    <div class="menu__confirmation">
+                      <span class="menu__wrapicon">
+                        <i class="menu__icon--yes fas fa-circle-check"></i>
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <span class="card__price">23€</span>
+                </label>
               </article>
             </div>
           </section>

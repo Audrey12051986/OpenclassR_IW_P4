@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -401,12 +400,31 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.headerrest {
+/*.header {
+ /* height: 63px;
+  width: 100%;
+  @include font__family-2;
+  font-size: 30px;
+  color: $title-color;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}*/
+.headerrest {
+  /*display: flex;
   gap: 40px;
   height: 63px;
-  background-color: #ffffff;
-  padding: 17px;
+  background-color: $bg-color-section2;
+  padding: 17px;*/
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  box-shadow: 0 2x 4px 0 rgba(0, 0, 0, 0.15);
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 .headerrest__arrow {
   display: flex;
@@ -417,8 +435,8 @@ body {
   color: #353535;
 }
 .headerrest__arrow--back {
-  display: inline-flex;
-  border: none;
+  position: absolute;
+  left: 20px;
   text-decoration: none;
 }
 .headerrest__logo {
@@ -526,60 +544,64 @@ h4 {
   margin: 0;
 }
 
-.card-container {
+.cardrest_container {
   display: flex;
   flex-direction: column;
   gap: 12px;
   justify-content: space-between;
 }
 
-/*.card {
+.cardrest {
   display: flex;
   justify-content: space-between;
-  background-color: $bg-color-section2;
+  gap: 5px;
+  background-color: #ffffff;
   border-radius: 15px;
-  box-shadow: (0 4px 15px rgba(0, 0, 0, 0.1));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%;
-  box-sizing: border-box;
   padding: 15px;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.cardrest:hover, input[type=checkbox]:checked + label .cardrest {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.cardrest__content {
+  display: inline-flex;
+  gap: 5px;
+  justify-content: space-between;
+  width: 100%;
+}
+.cardrest__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cardrest__title {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+.cardrest__subtitle {
+  font-weight: 300;
+  font-size: 15px;
+}
+.cardrest__price {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 700;
+  font-size: 15px;
+  color: #353535;
+  transition: transform 0.25s ease-out;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
 
-  &__content {
-    display: inline-flex;
-    gap: 5px;
-    justify-content: space-between;
-  }
-
-  &__txt {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  &__title {
-    font-weight: 500;
-    font-size: 18px;
-    margin: 0;
-    font-family: $font-family-1;
-    text-decoration: none;
-  }
-
-  &__subtitle {
-    font-weight: 300;
-    font-size: 15px;
-  }
-
-  &__price {
-    display: flex;
-    align-items: flex-end;
-    font-weight: 700;
-    font-size: 15px;
-    color: $bg-color-footer;
-  }
-}*/
-.card p {
+.cardrest p {
   margin: 0;
 }
 
@@ -587,94 +609,44 @@ h4 {
   display: none;
 }
 
-/* Styles par défaut pour les icônes */
-.menu__icon {
+.menu__confirmation {
   position: absolute;
+  right: -59px; /* Initial position off the screen */
   top: 50%;
-  right: -50px;
   transform: translateY(-50%);
-  transition: all 0.5s ease-in-out;
-}
-
-.menu__icon--yes {
-  display: none;
-}
-
-/* Au survol de la carte, déplacez l'icône de droite vers le centre */
-.card:hover .menu__icon--yes {
-  right: 10px;
-}
-
-.confirmation__card:checked + label .menu__icon--no {
-  display: none;
-}
-.confirmation__card:checked + label .menu__icon--yes {
-  display: block;
-  right: 10px;
-  color: #ffffff;
+  width: 59px;
+  height: 100%;
   background-color: #99e2d0;
-  padding: 10px;
-  border-radius: 50%;
-  /* transform: translateX(69px);
-  transition: right 0.25s ease-in-out;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.25s ease-out;
 }
 
-/*.menu__confirmation {
-  background-color: $filter-thirth-color;
-  color: $bg-color-section2;
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  /*font-size: 20px;*/
-/* border-radius: 0 15px 15px 0;
-  padding: 22.5px 20px;
-  transform: translateY(69px);
-  transition: right 0.25s ease-in-out;
-
-  &:hover &__confirmation {
-    margin-right: -1rem;
-  }
-
-  &__wrapicon {
-    display: inline-block;
-    border-radius: 50%;
-    padding: 10px;
-    background-color: $filter-thirth-color;
-  }
-
-   &:hover &__wrapicon {
-    transform: rotate(0);
-  }
-
-  &__icon {
-    color: white;
-    font-size: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &__icon {
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-  }
+.menu__wrapicon {
+  color: white;
+  font-size: 20px;
 }
 
-.card:hover .menu__confirmation {
-  right: 10px;
+input[type=checkbox]:checked + label .menu__confirmation,
+.cardrest:hover .menu__confirmation {
+  right: 0;
 }
 
-.card input[type="checkbox"] {
-  display: none;
+input[type=checkbox]:not(:checked) + label .menu__confirmation {
+  transition: right 0.25s ease-out;
 }
 
-.card input[type="checkbox"]:checked ~ .menu__confirmation {
-  right: 10px;
+input[type=checkbox]:checked + label .cardrest__price,
+.cardrest:hover .cardrest__price {
+  transform: translateX(-59px); /* Move left when checkbox is checked or card is hovered */
 }
 
-.card input[type="checkbox"]:checked ~ .menu__confirmation .menu__icon {
-  opacity: 1;
-}*/
-.menu .button__animated {
+input[type=checkbox]:not(:checked) + label .cardrest__price {
+  transition: transform 0.25s ease-out; /* Transition out */
+}
+
+.button__animated {
   background-color: linear-gradient(90deg, #9356dc 0%, #ff79da 100%);
   color: #ffffff;
   border: none;
@@ -687,7 +659,7 @@ h4 {
   display: flex;
   align-items: center;
 }
-.menu .button__animated:hover {
+.button__animated:hover {
   background: linear-gradient(90deg, #ff79da 0%, #9356dc 100%);
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
