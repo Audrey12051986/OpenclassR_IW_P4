@@ -46,7 +46,6 @@ $title-color: #101010;
 body {
   margin: 0;
   padding: 0;
-  /*width: 100%;*/
   box-sizing: border-box;
   overflow-x: hidden;
   max-width: 1440px;
@@ -81,8 +80,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  /*transition: opacity 0.5s ease, visibility 0.5s ease;*/
-  animation: loader 0.5s ease-out;
+  animation: loader 3s ease-out;
 
   .loader {
     border: 10px solid #f3f3f3;
@@ -190,10 +188,9 @@ body {
   }
 }
 
-.fonction {
+.operating {
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
   gap: 25px;
   background: $bg-color-section2;
   margin: 0;
@@ -210,7 +207,7 @@ body {
     justify-content: center;
     position: relative;
     height: 72px;
-    margin: 10px 20px; // 20px de margin à gauche et à droite pour ajouter un espace de 20px de chaque côté
+    margin: 10px 20px;
     padding: 20px;
     background: $bg-color-section;
     box-shadow: 2px 3px 20px $bg-color-section2;
@@ -221,10 +218,9 @@ body {
     box-sizing: border-box;
     text-decoration: none;
 
-    &_list__number {
+    &__list__number {
       position: absolute;
       left: -15px; // Positionnez le numéro à gauche, chevauchant le bord du bouton
-      /*p: 50%;*/
       background-color: $main-color;
       color: $bg-color-section2;
       border-radius: 50%;
@@ -238,14 +234,12 @@ body {
     }
 
     &__text {
-      /*width: 211px;*/
       font-family: "Roboto", sans-serif;
       font-style: normal;
       line-height: 1.2rem;
       font-weight: 300;
       font-size: 16px;
-      /*align-self: center;*/
-      flex-grow: 1; // Prend l'espace restant pour centrer le texte
+      flex-grow: 1;
       text-align: center;
     }
   }
@@ -275,12 +269,7 @@ body {
   .choose__like {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
-    /* width: 100%;*/
-    /*padding: 10px;*/
-    /*border: 2px solid #ccc;*/
     border-radius: 5px;
-    /*justify-content: center;*/
 
     .button__icon--no,
     .button__icon--yes {
@@ -410,13 +399,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* width: 50px;*/
     padding: 5px;
-
-    /*  .restaurant__like .restaurant__like--bg,
-    .restaurant__like .restaurant__like--nobg {
-      display: none;
-    }*/
   }
 }
 
@@ -438,9 +421,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 7px;
-    list-style: none; // Supprime les puces de la liste
-    padding: 0; // Retire les padding par défaut
-    margin: 0; // Retire les marges par défaut
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .footer__link {
@@ -453,5 +436,28 @@ body {
       margin-right: 7px;
       font-size: 13px;
     }
+  }
+}
+
+/****** Media queries ***********/
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .mobile-only {
+    display: flex;
+  }
+}
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+  .tablet-only {
+    display: flex;
+  }
+}
+
+/*desktop */
+@media (min-width: 1025px) {
+  .large-screen-only {
+    display: flex;
   }
 }

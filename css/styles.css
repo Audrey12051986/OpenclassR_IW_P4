@@ -15,7 +15,6 @@
 body {
   margin: 0;
   padding: 0;
-  /*width: 100%;*/
   box-sizing: border-box;
   overflow-x: hidden;
   max-width: 1440px;
@@ -50,8 +49,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  /*transition: opacity 0.5s ease, visibility 0.5s ease;*/
-  animation: loader 0.5s ease-out;
+  animation: loader 3s ease-out;
 }
 .loaderout .loader {
   border: 10px solid #f3f3f3;
@@ -150,20 +148,19 @@ body {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
 
-.fonction {
+.operating {
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
   gap: 25px;
   background: #ffffff;
   margin: 0;
   padding: 20px;
 }
-.fonction h2 {
+.operating h2 {
   font-size: 24px;
   font-weight: 700;
 }
-.fonction .button {
+.operating .button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,10 +177,9 @@ body {
   box-sizing: border-box;
   text-decoration: none;
 }
-.fonction .button_list__number {
+.operating .button__list__number {
   position: absolute;
   left: -15px;
-  /*p: 50%;*/
   background-color: #9356dc;
   color: #ffffff;
   border-radius: 50%;
@@ -195,14 +191,12 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
-.fonction .button__text {
-  /*width: 211px;*/
+.operating .button__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   line-height: 1.2rem;
   font-weight: 300;
   font-size: 16px;
-  /*align-self: center;*/
   flex-grow: 1;
   text-align: center;
 }
@@ -229,12 +223,7 @@ body {
 .choose + label .choose__like {
   display: flex;
   align-items: center;
-  /*justify-content: space-between;*/
-  /* width: 100%;*/
-  /*padding: 10px;*/
-  /*border: 2px solid #ccc;*/
   border-radius: 5px;
-  /*justify-content: center;*/
 }
 .choose + label .choose__like .button__icon--no,
 .choose + label .choose__like .button__icon--yes {
@@ -352,12 +341,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 50px;*/
   padding: 5px;
-  /*  .restaurant__like .restaurant__like--bg,
-  .restaurant__like .restaurant__like--nobg {
-    display: none;
-  }*/
 }
 
 .footer {
@@ -394,28 +378,32 @@ body {
   font-size: 13px;
 }
 
+/****** Media queries ***********/
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .mobile-only {
+    display: flex;
+  }
+}
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+  .tablet-only {
+    display: flex;
+  }
+}
+/*desktop */
+@media (min-width: 1025px) {
+  .large-screen-only {
+    display: flex;
+  }
+}
 body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
-/*.header {
- /* height: 63px;
-  width: 100%;
-  @include font__family-2;
-  font-size: 30px;
-  color: $title-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
 .headerrest {
-  /*display: flex;
-  gap: 40px;
-  height: 63px;
-  background-color: $bg-color-section2;
-  padding: 17px;*/
   position: sticky;
   top: 0;
   background: #ffffff;
@@ -460,7 +448,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 275px;
   min-width: 100%;
 }
 
@@ -564,6 +552,9 @@ h4 {
   overflow: hidden;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
+.cardrest:hover {
+  cursor: pointer;
+}
 .cardrest:hover, input[type=checkbox]:checked + label .cardrest {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -611,7 +602,7 @@ h4 {
 
 .menu__confirmation {
   position: absolute;
-  right: -59px; /* Initial position off the screen */
+  right: -59px;
   top: 50%;
   transform: translateY(-50%);
   width: 59px;
@@ -631,23 +622,33 @@ h4 {
 input[type=checkbox]:checked + label .menu__confirmation,
 .cardrest:hover .menu__confirmation {
   right: 0;
+  cursor: pointer;
 }
 
 input[type=checkbox]:not(:checked) + label .menu__confirmation {
   transition: right 0.25s ease-out;
+  cursor: pointer;
 }
 
 input[type=checkbox]:checked + label .cardrest__price,
 .cardrest:hover .cardrest__price {
-  transform: translateX(-59px); /* Move left when checkbox is checked or card is hovered */
+  transform: translateX(-59px);
+  cursor: pointer;
 }
 
 input[type=checkbox]:not(:checked) + label .cardrest__price {
-  transition: transform 0.25s ease-out; /* Transition out */
+  transition: transform 0.25s ease-out;
+  cursor: pointer;
 }
 
-.button__animated {
-  background-color: linear-gradient(90deg, #9356dc 0%, #ff79da 100%);
+.order {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 30px 0;
+}
+
+.title__button {
+  background: linear-gradient(#9356dc, #ff79da);
   color: #ffffff;
   border: none;
   padding: 20px;
@@ -655,12 +656,14 @@ input[type=checkbox]:not(:checked) + label .cardrest__price {
   height: 50px;
   font-weight: 500;
   border-radius: 25px;
-  transition: background 300ms ease-out, box-shadow 300ms ease-out;
   display: flex;
   align-items: center;
+  transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
 }
-.button__animated:hover {
-  background: linear-gradient(90deg, #ff79da 0%, #9356dc 100%);
+
+.title__button:hover {
+  background: linear-gradient(#ff79da, #9356dc);
+  opacity: 0.85;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
 
