@@ -24,8 +24,13 @@ $color-title: #101010;
 }
 
 body {
-  margin: 0;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  max-width: 1440px;
+  min-width: 320px;
   font-family: $font-family-1;
 }
 
@@ -35,18 +40,24 @@ body {
   height: 63px;
   background-color: $bg-color-section2;
   padding: 17px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   &__arrow {
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     font-size: 30px;
     margin: 0;
     color: $bg-color-footer;
+    position: absolute;
+    left: 30px;
+    top: 30px;
   }
 
   &__arrow--back {
-    display: inline-flex;
+    /*display: inline-flex;*/
     border: none;
     text-decoration: none;
   }
@@ -64,36 +75,34 @@ body {
   display: grid;
   grid-auto-columns: 1fr;
   gap: 40px;
-}
 
-.banner__img {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-  min-width: 100%;
-}
-
-.restaurant {
-  margin-top: -50px;
-  padding: 20px;
-  border-radius: 40px;
-  background-color: $bg-color-section2;
-  z-index: 1;
-  position: relative;
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .banner__img {
+    height: 18rem;
+    object-fit: cover;
+    width: 100%;
   }
 
-  &__title {
-    @include font-family-2;
-    font-size: 28px;
-    text-align: center;
-    margin: 0;
-    color: $color-title;
+  .restaurant {
+    margin-top: -50px;
+    padding: 20px;
+    border-radius: 40px;
+    background-color: $bg-color-section2;
+    z-index: 1;
+    position: relative;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__title {
+      @include font-family-2;
+      font-size: 28px;
+      text-align: center;
+      margin: 0;
+      color: $color-title;
+    }
   }
 }
 
@@ -158,30 +167,36 @@ h4 {
   margin: 0;
 }
 
-.card-container {
+.cardrest__container {
   display: flex;
   flex-direction: column;
   gap: 12px;
   justify-content: space-between;
 }
 
-/*.card {
+.cardrest {
   display: flex;
   justify-content: space-between;
+  gap: 5px;
   background-color: $bg-color-section2;
   border-radius: 15px;
-  box-shadow: (0 4px 15px rgba(0, 0, 0, 0.1));
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%;
-  box-sizing: border-box;
   padding: 15px;
   position: relative;
   overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover,
+  input[type="checkbox"]:checked + label & {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
 
   &__content {
     display: inline-flex;
     gap: 5px;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__txt {
@@ -209,114 +224,71 @@ h4 {
     font-weight: 700;
     font-size: 15px;
     color: $bg-color-footer;
+    transition: transform 0.25s ease-out;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
   }
-}*/
+}
 
-.card p {
+.cardrest p {
   margin: 0;
 }
 
-.confirmation__card {
+.confirmation__cardrest {
   display: none;
 }
 
-/* Styles par défaut pour les icônes */
-.menu__icon {
+.menu__confirmation {
   position: absolute;
+  right: -59px; /* Initial position off the screen */
   top: 50%;
-  right: -50px;
   transform: translateY(-50%);
-  transition: all 0.5s ease-in-out;
-}
+  width: 59px;
+  height: 100%;
+  background-color: $filter-thirth-color; /* Define your green background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.25s ease-out;
 
-.menu__icon--yes {
-  display: none;
-}
-
-/* Au survol de la carte, déplacez l'icône de droite vers le centre */
-.card:hover .menu__icon--yes {
-  right: 10px;
-}
-
-.confirmation__card {
-  &:checked + label .menu__icon--no {
-    display: none;
-  }
-
-  &:checked + label .menu__icon--yes {
-    display: block;
-    right: 10px;
-    color: $bg-color-section2;
-    background-color: $filter-thirth-color;
-    padding: 10px;
+  .menu__wrapicon {
     border-radius: 50%;
-    /* transform: translateX(69px);
-    transition: right 0.25s ease-in-out;*/
-  }
-}
-
-/*.menu__confirmation {
-  background-color: $filter-thirth-color;
-  color: $bg-color-section2;
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  /*font-size: 20px;*/
-/* border-radius: 0 15px 15px 0;
-  padding: 22.5px 20px;
-  transform: translateY(69px);
-  transition: right 0.25s ease-in-out;
-
-  &:hover &__confirmation {
-    margin-right: -1rem;
+    padding: 5px;
+    background-color: $bg-color-section2;
   }
 
-  &__wrapicon {
-    display: inline-block;
-    border-radius: 50%;
-    padding: 10px;
-    background-color: $filter-thirth-color;
-  }
-
-   &:hover &__wrapicon {
-    transform: rotate(0);
-  }
-
-  &__icon {
-    color: white;
+  .menu__icon {
+    color: $filter-thirth-color;
     font-size: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &__icon {
-    transform: rotate(0deg);
+    /* transition: opacity 0.3s ease;
+    transform: rotate(0deg);*/
     transition: 0.25s ease-in-out;
   }
 }
 
-.card:hover .menu__confirmation {
-  right: 10px;
+input[type="checkbox"]:checked + label .menu__confirmation,
+.cardrest:hover .menu__confirmation {
+  right: 0; /* Slide in from the right */
 }
 
-.card input[type="checkbox"] {
-  display: none;
+input[type="checkbox"]:not(:checked) + label .menu__confirmation {
+  transition: right 0.25s ease-out; /* Transition out to the right */
 }
 
-.card input[type="checkbox"]:checked ~ .menu__confirmation {
-  right: 10px;
+input[type="checkbox"]:checked + label .cardrest__price,
+.cardrest:hover .cardrest__price {
+  transform: translateX(
+    -59px
+  ); /* Move left when checkbox is checked or card is hovered */
 }
 
-.card input[type="checkbox"]:checked ~ .menu__confirmation .menu__icon {
-  opacity: 1;
-}*/
+input[type="checkbox"]:not(:checked) + label .cardrest__price {
+  transition: transform 0.25s ease-out; /* Transition out */
+}
 
-.menu .button__animated {
-  background-color: linear-gradient(
-    90deg,
-    $main-color 0%,
-    $gradient-main-color 100%
-  );
+.button__animated {
+  background: linear-gradient($main-color, $gradient-main-color);
   color: $bg-color-section2;
   border: none;
   padding: 20px;
@@ -324,12 +296,14 @@ h4 {
   height: 50px;
   font-weight: 500;
   border-radius: 25px;
-  transition: background 300ms ease-out, box-shadow 300ms ease-out;
   display: flex;
   align-items: center;
+  transition: background 300ms ease-out, box-shadow 300ms ease-out,
+    opacity 300ms ease-out;
 
   &:hover {
-    background: linear-gradient(90deg, #ff79da 0%, #9356dc 100%);
+    background: linear-gradient($gradient-main-color, $main-color);
+    opacity: 0.85;
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
   }
 }

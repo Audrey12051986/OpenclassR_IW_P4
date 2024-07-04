@@ -155,7 +155,7 @@ body {
       font-weight: 300;
     }
 
-    &__button {
+    .button__animated {
       background: linear-gradient($main-color, $gradient-main-color);
       color: $bg-color-section2;
       border: none;
