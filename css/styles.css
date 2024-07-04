@@ -7,6 +7,20 @@
     transform: rotate(360deg);
   }
 }
+@keyframes gelatine {
+  from, to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: sclae(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
 body {
   display: flex;
   flex-direction: column;
@@ -43,8 +57,8 @@ body {
   flex-direction: column;
   gap: 2px;
   align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 .header__logo {
   height: 63px;
@@ -59,22 +73,6 @@ body {
   justify-content: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
-.header__form {
-  height: 50px;
-  width: 100%;
-  background-color: #eaeaea;
-  text-align: center;
-  padding: 0;
-}
-.header__form--icon {
-  color: #353535;
-  padding: 17px;
-}
-.header__style {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-}
 
 .main {
   display: flex;
@@ -83,6 +81,28 @@ body {
   gap: 30px;
   margin: 0;
 }
+.main .form__location {
+  height: 50px;
+  width: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.main .form__location--container {
+  display: flex;
+  align-items: center;
+}
+.main .form__location--icon {
+  color: #353535;
+  padding: 17px;
+}
+.main .form__location--style {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
 .main .title {
   display: flex;
   flex-direction: column;
@@ -90,6 +110,7 @@ body {
   text-align: center;
   padding: 40px 20px;
   background: #f6f6f6;
+  margin-top: -30px;
 }
 .main .title h1 {
   font-size: 24px;
@@ -117,8 +138,7 @@ body {
   opacity: 0.85;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
-
-.fonction {
+.main .operating {
   display: flex;
   flex-direction: column;
   /*align-items: center;*/
@@ -126,12 +146,14 @@ body {
   background: #ffffff;
   margin: 0;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
-.fonction h2 {
+.main .operating h2 {
   font-size: 24px;
   font-weight: 700;
 }
-.fonction .button {
+.main .operating .button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,9 +170,14 @@ body {
   font-weight: 500;
   box-sizing: border-box;
   text-decoration: none;
-  /*overflow: hidden;*/
+  color: black;
+  letter-spacing: 0;
 }
-.fonction .button_list__number {
+.main .operating .button:hover {
+  letter-spacing: 2px;
+  color: #9356dc;
+}
+.main .operating .button_list__number {
   position: absolute;
   left: -15px;
   /*p: 50%;*/
@@ -165,7 +192,14 @@ body {
   font-size: 16px;
   font-weight: 500;
 }
-.fonction .button__text {
+.main .operating .button_list__number:hover {
+  animation: gelatine 0.5s infinite;
+}
+.main .operating .button__icon {
+  margin: 0 20px 0 20px;
+  color: #353535;
+}
+.main .operating .button__text {
   /*width: 211px;*/
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -198,17 +232,15 @@ body {
 .choose + label .choose__like {
   display: flex;
   align-items: center;
-  /*justify-content: space-between;*/
-  /* width: 100%;*/
-  /*padding: 10px;*/
-  /*border: 2px solid #ccc;*/
   border-radius: 5px;
-  /*justify-content: center;*/
 }
 .choose + label .choose__like .button__icon--no,
 .choose + label .choose__like .button__icon--yes {
   display: none;
-  margin-right: 10px;
+}
+.choose + label .choose__like .button__icon--no:hover,
+.choose + label .choose__like .button__icon--yes:hover {
+  color: #9356dc;
 }
 
 .restaurants {
@@ -217,7 +249,6 @@ body {
   gap: 18px;
   padding: 20px;
   background-color: #f6f6f6;
-  /*width: 100%;*/
 }
 .restaurants h2 {
   font-size: 24px;
@@ -237,10 +268,16 @@ body {
   border-radius: 15px;
   overflow: hidden;
   text-decoration: none;
+  box-sizing: border-box;
   /* width: calc(100% - 40px);*/
-  /* &__img {
-    display: block;
-  }*/
+  position: relative;
+}
+.restaurants .card__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
 }
 .restaurants .card__content {
   display: flex;
@@ -263,14 +300,6 @@ body {
   font-size: 17px;
   font-weight: 200;
   margin: 0;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden;
 }
 
 .like {
@@ -311,6 +340,17 @@ body {
   .restaurant__like .restaurant__like--nobg {
     display: none;
   }*/
+}
+
+.newtag {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: #99e2d0;
+  color: #008766;
+  padding: 5px 10px;
+  border-radius: 2px;
+  z-index: 1;
 }
 
 .footer {

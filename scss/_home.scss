@@ -36,6 +36,22 @@ $title-color: #101010;
   }
 }
 
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: sclae(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -71,8 +87,8 @@ body {
   flex-direction: column;
   gap: 2px;
   align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 2;
 
   &__logo {
     height: 63px;
@@ -85,25 +101,6 @@ body {
     justify-content: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
   }
-
-  &__form {
-    height: 50px;
-    width: 100%;
-    background-color: $fourth-color;
-    text-align: center;
-    padding: 0;
-
-    &--icon {
-      color: $bg-color-footer;
-      padding: 17px;
-    }
-  }
-
-  &__style {
-    font-family: $font-family-1;
-    font-size: 16px;
-    font-weight: 500;
-  }
 }
 
 .main {
@@ -113,6 +110,32 @@ body {
   gap: 30px;
   margin: 0;
 
+  .form__location {
+    height: 50px;
+    width: 100%;
+    background-color: $fourth-color;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    z-index: 1;
+
+    &--container {
+      display: flex;
+      align-items: center;
+    }
+
+    &--icon {
+      color: $bg-color-footer;
+      padding: 17px;
+    }
+
+    &--style {
+      font-family: $font-family-1;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
   .title {
     display: flex;
     flex-direction: column;
@@ -120,6 +143,7 @@ body {
     text-align: center;
     padding: 40px 20px;
     background: $bg-color-section;
+    margin-top: -30px;
 
     h1 {
       font-size: 24px;
@@ -152,67 +176,84 @@ body {
       }
     }
   }
-}
 
-.fonction {
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  gap: 25px;
-  background: $bg-color-section2;
-  margin: 0;
-  padding: 20px;
-
-  h2 {
-    font-size: 24px;
-    font-weight: 700;
-  }
-
-  .button {
+  .operating {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 72px;
-    width: calc(100% - 40px);
-    margin: 10px 20px; // 20px de margin à gauche et à droite pour ajouter un espace de 20px de chaque côté
+    flex-direction: column;
+    /*align-items: center;*/
+    gap: 25px;
+    background: $bg-color-section2;
+    margin: 0;
     padding: 20px;
-    background: $bg-color-section;
-    box-shadow: 2px 3px 20px $bg-color-section2;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: 500;
+    width: 100%;
     box-sizing: border-box;
-    text-decoration: none;
-    /*overflow: hidden;*/
 
-    &_list__number {
-      position: absolute;
-      left: -15px; // Positionnez le numéro à gauche, chevauchant le bord du bouton
-      /*p: 50%;*/
-      background-color: $main-color;
-      color: $bg-color-section2;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .button {
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+      height: 72px;
+      width: calc(100% - 40px);
+      margin: 10px 20px; // 20px de margin à gauche et à droite pour ajouter un espace de 20px de chaque côté
+      padding: 20px;
+      background: $bg-color-section;
+      box-shadow: 2px 3px 20px $bg-color-section2;
+      border: none;
+      border-radius: 20px;
       font-size: 16px;
       font-weight: 500;
-    }
+      box-sizing: border-box;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 0;
 
-    &__text {
-      /*width: 211px;*/
-      font-family: "Roboto", sans-serif;
-      font-style: normal;
-      line-height: 1.2rem;
-      font-weight: 300;
-      font-size: 16px;
-      /*align-self: center;*/
-      flex-grow: 1; // Prend l'espace restant pour centrer le texte
-      text-align: center;
+      &:hover {
+        letter-spacing: 2px;
+        color: $main-color;
+      }
+
+      &_list__number {
+        position: absolute;
+        left: -15px; // Positionnez le numéro à gauche, chevauchant le bord du bouton
+        /*p: 50%;*/
+        background-color: $main-color;
+        color: $bg-color-section2;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        &:hover {
+          animation: gelatine 0.5s infinite;
+        }
+      }
+
+      &__icon {
+        margin: 0 20px 0 20px;
+        color: $bg-color-footer;
+      }
+
+      &__text {
+        /*width: 211px;*/
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        line-height: 1.2rem;
+        font-weight: 300;
+        font-size: 16px;
+        /*align-self: center;*/
+        flex-grow: 1; // Prend l'espace restant pour centrer le texte
+        text-align: center;
+      }
     }
   }
 }
@@ -235,22 +276,20 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  width: 100%; // Prendre toute la largeur du bouton
+  width: 100%;
 
   .choose__like {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
-    /* width: 100%;*/
-    /*padding: 10px;*/
-    /*border: 2px solid #ccc;*/
     border-radius: 5px;
-    /*justify-content: center;*/
 
     .button__icon--no,
     .button__icon--yes {
       display: none;
-      margin-right: 10px; // Espace entre l'icône et le texte
+
+      &:hover {
+        color: $main-color;
+      }
     }
   }
 }
@@ -261,7 +300,6 @@ body {
   gap: 18px;
   padding: 20px;
   background-color: $bg-color-section;
-  /*width: 100%;*/
 
   h2 {
     font-size: 24px;
@@ -283,11 +321,16 @@ body {
     border-radius: 15px;
     overflow: hidden;
     text-decoration: none;
+    box-sizing: border-box;
     /* width: calc(100% - 40px);*/
+    position: relative;
 
-    /* &__img {
-      display: block;
-    }*/
+    &__img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      overflow: hidden;
+    }
 
     &__content {
       display: flex;
@@ -315,13 +358,6 @@ body {
       }
     }
   }
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  overflow: hidden;
 }
 
 .like {
@@ -367,6 +403,17 @@ body {
       display: none;
     }*/
   }
+}
+
+.newtag {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: #99e2d0;
+  color: #008766;
+  padding: 5px 10px;
+  border-radius: 2px;
+  z-index: 1;
 }
 
 .footer {
