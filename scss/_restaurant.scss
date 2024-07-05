@@ -354,3 +354,25 @@ input[type="checkbox"]:not(:checked) + label .cardrest__price {
     font-size: 13px;
   }
 }
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .mobile-only {
+    display: flex;
+  }
+}
+
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+}
+
+/*desktop */
+@media (min-width: 1025px) {
+  .large-screen-only {
+    display: block;
+  }
+}
