@@ -45,9 +45,6 @@ body {
   position: relative;
 
   &__arrow {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
     font-size: 30px;
     margin: 0;
     color: $bg-color-footer;
@@ -57,7 +54,6 @@ body {
   }
 
   &__arrow--back {
-    /*display: inline-flex;*/
     border: none;
     text-decoration: none;
   }
@@ -67,6 +63,10 @@ body {
     color: $color-title;
     font-size: 30px;
     text-align: center;
+  }
+
+  h1 {
+    margin: 0;
   }
 }
 
@@ -83,12 +83,15 @@ body {
   }
 
   .restaurant {
-    margin-top: -50px;
+    margin-top: -80px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     border-radius: 40px;
     background-color: $bg-color-section2;
-    z-index: 1;
-    position: relative;
+    /*z-index: 1;
+    position: relative;*/
 
     &__header {
       display: flex;
@@ -137,102 +140,106 @@ body {
   }
 }
 
-.menu__list {
-  display: grid;
-  gap: 12px;
-}
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
-.menu__list h3 {
-  font-family: $font-family-1;
-  font-weight: 300;
-  font-size: 16px;
-  text-transform: uppercase;
-  position: relative;
-}
+  &__list {
+    display: grid;
+    gap: 12px;
 
-.menu__list h3:after {
-  content: "";
-  width: 40px;
-  height: 3px;
-  background-color: $filter-thirth-color;
-  position: absolute;
-  left: 0;
-  top: 24px;
-}
+    h3 {
+      font-family: $font-family-1;
+      font-weight: 300;
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
 
-h4 {
-  font-family: $font-family-1;
-  font-weight: 300;
-  font-size: 18px;
-  margin: 0;
+      &:after {
+        content: "";
+        width: 40px;
+        height: 3px;
+        background-color: $filter-thirth-color;
+        position: absolute;
+        left: 0;
+        top: 24px;
+      }
+    }
+
+    h4 {
+      font-family: $font-family-1;
+      font-weight: 300;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
 }
 
 .cardrest__container {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  justify-content: space-between;
-}
 
-.cardrest {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-  background-color: $bg-color-section2;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  padding: 15px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s, box-shadow 0.3s;
-
-  &:hover,
-  input[type="checkbox"]:checked + label & {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  &__content {
-    display: inline-flex;
-    gap: 5px;
+  .cardrest {
+    display: flex;
     justify-content: space-between;
-    width: 100%;
-  }
-
-  &__txt {
-    display: flex;
-    flex-direction: column;
     gap: 5px;
+    background-color: $bg-color-section2;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:hover,
+    input[type="checkbox"]:checked + label & {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &__content {
+      display: inline-flex;
+      gap: 5px;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__txt {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      margin: 0;
+      font-family: $font-family-1;
+      text-decoration: none;
+    }
+
+    &__subtitle {
+      font-weight: 300;
+      font-size: 15px;
+    }
+
+    &__price {
+      display: flex;
+      align-items: flex-end;
+      font-weight: 700;
+      font-size: 15px;
+      color: $bg-color-footer;
+      transition: transform 0.25s ease-out;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+    }
   }
 
-  &__title {
-    font-weight: 500;
-    font-size: 18px;
+  .cardrest p {
     margin: 0;
-    font-family: $font-family-1;
-    text-decoration: none;
   }
-
-  &__subtitle {
-    font-weight: 300;
-    font-size: 15px;
-  }
-
-  &__price {
-    display: flex;
-    align-items: flex-end;
-    font-weight: 700;
-    font-size: 15px;
-    color: $bg-color-footer;
-    transition: transform 0.25s ease-out;
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-  }
-}
-
-.cardrest p {
-  margin: 0;
 }
 
 .confirmation__cardrest {
@@ -241,12 +248,12 @@ h4 {
 
 .menu__confirmation {
   position: absolute;
-  right: -59px; /* Initial position off the screen */
+  right: -59px;
   top: 50%;
   transform: translateY(-50%);
   width: 59px;
   height: 100%;
-  background-color: $filter-thirth-color; /* Define your green background color */
+  background-color: $filter-thirth-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,33 +268,34 @@ h4 {
   .menu__icon {
     color: $filter-thirth-color;
     font-size: 1.5rem;
-    /* transition: opacity 0.3s ease;
-    transform: rotate(0deg);*/
     transition: 0.25s ease-in-out;
+  }
+
+  .menu__confirmation label {
+    width: 100%;
   }
 }
 
 input[type="checkbox"]:checked + label .menu__confirmation,
 .cardrest:hover .menu__confirmation {
-  right: 0; /* Slide in from the right */
+  right: 0;
 }
 
 input[type="checkbox"]:not(:checked) + label .menu__confirmation {
-  transition: right 0.25s ease-out; /* Transition out to the right */
+  transition: right 0.25s ease-out;
 }
 
 input[type="checkbox"]:checked + label .cardrest__price,
 .cardrest:hover .cardrest__price {
-  transform: translateX(
-    -59px
-  ); /* Move left when checkbox is checked or card is hovered */
+  transform: translateX(-59px);
 }
 
 input[type="checkbox"]:not(:checked) + label .cardrest__price {
-  transition: transform 0.25s ease-out; /* Transition out */
+  transition: transform 0.25s ease-out;
 }
 
 .button__animated {
+  width: 40%;
   background: linear-gradient($main-color, $gradient-main-color);
   color: $bg-color-section2;
   border: none;
@@ -298,6 +306,9 @@ input[type="checkbox"]:not(:checked) + label .cardrest__price {
   border-radius: 25px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 20px;
   transition: background 300ms ease-out, box-shadow 300ms ease-out,
     opacity 300ms ease-out;
 
@@ -322,18 +333,18 @@ input[type="checkbox"]:not(:checked) + label .cardrest__price {
   }
 
   &__list {
-    list-style: none; // Supprime les puces de la liste
-    padding: 0; // Retire les padding par défaut
-    margin: 0; // Retire les marges par défaut
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   &__listelt {
-    margin-bottom: 7px; // Ajoute un espacement de 7px entre les éléments de la liste
+    margin-bottom: 7px;
   }
 
   &__link {
-    text-decoration: none; // Supprime les soulignements des liens
-    color: inherit; // Inhérente la couleur du parent
+    text-decoration: none;
+    color: inherit;
     display: flex;
     align-items: center;
   }

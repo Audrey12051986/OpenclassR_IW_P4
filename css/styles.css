@@ -1,3 +1,9 @@
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -26,31 +32,30 @@ body {
   justify-content: center;
   margin: 0;
   max-width: 1440px;
-  /*max-width: 768px;*/
   min-width: 320px;
   font-family: roboto;
 }
-
-/*
-.loaderout {
+body .loaderout {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: $bg-color-section;
-
-  .loader {
-    border: 10px solid $bg-color-section;
-    border-top: 10px solid $main-color;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
+  background-color: #f6f6f6;
 }
-*/
+body .loaderout .loader {
+  border: 10px solid #f6f6f6;
+  border-top: 10px solid #9356dc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+body .loaderout .hide-loader {
+  animation: fadeOut 3s forwards;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -124,10 +129,12 @@ body {
   color: #ffffff;
   border: none;
   padding: 20px;
+  margin-top: 20px;
   font-size: 16px;
   height: 50px;
   font-weight: 500;
   border-radius: 25px;
+  width: auto;
   display: flex;
   align-items: center;
   transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
@@ -140,7 +147,6 @@ body {
 .main .operating {
   display: flex;
   flex-direction: column;
-  /*align-items: center;*/
   gap: 25px;
   background: #ffffff;
   margin: 0;
@@ -179,7 +185,6 @@ body {
 .main .operating .button_list__number {
   position: absolute;
   left: -15px;
-  /*p: 50%;*/
   background-color: #9356dc;
   color: #ffffff;
   border-radius: 50%;
@@ -199,13 +204,11 @@ body {
   color: #353535;
 }
 .main .operating .button__text {
-  /*width: 211px;*/
   font-family: "Roboto", sans-serif;
   font-style: normal;
   line-height: 1.2rem;
   font-weight: 300;
   font-size: 16px;
-  /*align-self: center;*/
   flex-grow: 1;
   text-align: center;
 }
@@ -268,15 +271,14 @@ body {
   overflow: hidden;
   text-decoration: none;
   box-sizing: border-box;
-  /* width: calc(100% - 40px);*/
   position: relative;
 }
 .restaurants .card__img {
   width: 100%;
   height: auto;
+  max-height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  overflow: hidden;
 }
 .restaurants .card__content {
   display: flex;
@@ -333,12 +335,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 50px;*/
   padding: 5px;
-  /*  .restaurant__like .restaurant__like--bg,
-  .restaurant__like .restaurant__like--nobg {
-    display: none;
-  }*/
 }
 
 .newtag {
@@ -408,9 +405,6 @@ body {
   position: relative;
 }
 .headerrest__arrow {
-  /*display: flex;
-  justify-content: center;
-  align-items: center;*/
   font-size: 30px;
   margin: 0;
   color: #353535;
@@ -419,7 +413,6 @@ body {
   top: 30px;
 }
 .headerrest__arrow--back {
-  /*display: inline-flex;*/
   border: none;
   text-decoration: none;
 }
@@ -430,6 +423,9 @@ body {
   color: #101010;
   font-size: 30px;
   text-align: center;
+}
+.headerrest h1 {
+  margin: 0;
 }
 
 .mainrest {
@@ -445,12 +441,15 @@ body {
   width: 100%;
 }
 .mainrest .restaurant {
-  margin-top: -50px;
+  margin-top: -80px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   border-radius: 40px;
   background-color: #ffffff;
-  z-index: 1;
-  position: relative;
+  /*z-index: 1;
+  position: relative;*/
 }
 .mainrest .restaurant__header {
   display: flex;
@@ -494,11 +493,15 @@ body {
   justify-content: center;
 }
 
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .menu__list {
   display: grid;
   gap: 12px;
 }
-
 .menu__list h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -506,7 +509,6 @@ body {
   text-transform: uppercase;
   position: relative;
 }
-
 .menu__list h3:after {
   content: "";
   width: 40px;
@@ -516,8 +518,7 @@ body {
   left: 0;
   top: 24px;
 }
-
-h4 {
+.menu__list h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -528,48 +529,45 @@ h4 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  justify-content: space-between;
 }
-
-.cardrest {
+.cardrest__container .cardrest {
   display: flex;
   justify-content: space-between;
   gap: 5px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
   padding: 15px;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
-.cardrest:hover, input[type=checkbox]:checked + label .cardrest {
+.cardrest__container .cardrest:hover, input[type=checkbox]:checked + label .cardrest__container .cardrest {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.cardrest__content {
+.cardrest__container .cardrest__content {
   display: inline-flex;
   gap: 5px;
   justify-content: space-between;
   width: 100%;
 }
-.cardrest__txt {
+.cardrest__container .cardrest__txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.cardrest__title {
+.cardrest__container .cardrest__title {
   font-weight: 500;
   font-size: 18px;
   margin: 0;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
-.cardrest__subtitle {
+.cardrest__container .cardrest__subtitle {
   font-weight: 300;
   font-size: 15px;
 }
-.cardrest__price {
+.cardrest__container .cardrest__price {
   display: flex;
   align-items: flex-end;
   font-weight: 700;
@@ -580,8 +578,7 @@ h4 {
   right: 15px;
   bottom: 15px;
 }
-
-.cardrest p {
+.cardrest__container .cardrest p {
   margin: 0;
 }
 
@@ -591,12 +588,12 @@ h4 {
 
 .menu__confirmation {
   position: absolute;
-  right: -59px; /* Initial position off the screen */
+  right: -59px;
   top: 50%;
   transform: translateY(-50%);
   width: 59px;
   height: 100%;
-  background-color: #99e2d0; /* Define your green background color */
+  background-color: #99e2d0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -610,30 +607,32 @@ h4 {
 .menu__confirmation .menu__icon {
   color: #99e2d0;
   font-size: 1.5rem;
-  /* transition: opacity 0.3s ease;
-  transform: rotate(0deg);*/
   transition: 0.25s ease-in-out;
+}
+.menu__confirmation .menu__confirmation label {
+  width: 100%;
 }
 
 input[type=checkbox]:checked + label .menu__confirmation,
 .cardrest:hover .menu__confirmation {
-  right: 0; /* Slide in from the right */
+  right: 0;
 }
 
 input[type=checkbox]:not(:checked) + label .menu__confirmation {
-  transition: right 0.25s ease-out; /* Transition out to the right */
+  transition: right 0.25s ease-out;
 }
 
 input[type=checkbox]:checked + label .cardrest__price,
 .cardrest:hover .cardrest__price {
-  transform: translateX(-59px); /* Move left when checkbox is checked or card is hovered */
+  transform: translateX(-59px);
 }
 
 input[type=checkbox]:not(:checked) + label .cardrest__price {
-  transition: transform 0.25s ease-out; /* Transition out */
+  transition: transform 0.25s ease-out;
 }
 
 .button__animated {
+  width: 40%;
   background: linear-gradient(#9356dc, #ff79da);
   color: #ffffff;
   border: none;
@@ -644,6 +643,9 @@ input[type=checkbox]:not(:checked) + label .cardrest__price {
   border-radius: 25px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 20px;
   transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
 }
 .button__animated:hover {
