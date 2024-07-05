@@ -405,7 +405,7 @@ body .hide_loader {
   }
 }
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (min-width: 767.98px) {
+@media (max-width: 1024px) {
   .title h1 {
     font-size: 32px;
   }
