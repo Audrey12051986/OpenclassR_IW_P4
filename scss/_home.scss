@@ -84,6 +84,7 @@ body {
     opacity: 1;
     visibility: visible;
     animation: 0.5s loading 2000ms forwards;
+
     .loader {
       border: 10px solid $bg-color-section;
       border-top: 10px solid $main-color;
@@ -99,367 +100,426 @@ body {
   .hide_loader {
     animation: fadeOut 4s forwards;
   }
-}
 
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  z-index: 2;
-
-  &__logo {
-    height: 63px;
-    width: 100%;
-    @include font__family-2;
-    font-size: 30px;
-    color: $title-color;
+  .header {
     display: flex;
+    flex-direction: column;
+    gap: 2px;
     align-items: center;
-    justify-content: center;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  }
-}
+    z-index: 2;
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin: 0;
-
-  .form__location {
-    height: 50px;
-    width: 100%;
-    background-color: $fourth-color;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-    z-index: 1;
-
-    &--container {
-      display: flex;
-      align-items: center;
-    }
-
-    &--icon {
-      color: $bg-color-footer;
-      padding: 17px;
-    }
-
-    &--style {
-      font-family: $font-family-1;
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    background: $bg-color-section;
-    margin-top: -30px;
-    width: 100%;
-    box-sizing: border-box;
-
-    h1 {
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 18px;
-      font-weight: 300;
-    }
-
-    .button__animated {
-      background: linear-gradient($main-color, $gradient-main-color);
-      color: $bg-color-section2;
-      border: none;
-      padding: 20px;
-      margin-top: 20px;
-      font-size: 16px;
-      height: 50px;
-      font-weight: 500;
-      border-radius: 25px;
-      width: auto;
-      display: flex;
-      align-items: center;
-      transition: background 300ms ease-out, box-shadow 300ms ease-out,
-        opacity 300ms ease-out;
-
-      &:hover {
-        background: linear-gradient($gradient-main-color, $main-color);
-        opacity: 0.85;
-        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
-      }
-    }
-  }
-
-  .operating {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    background: $bg-color-section2;
-    margin: 0;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-
-    h2 {
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    .button {
+    &__logo {
+      height: 63px;
+      width: 100%;
+      @include font__family-2;
+      font-size: 30px;
+      color: $title-color;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      height: 72px;
-      width: calc(100% - 40px);
-      margin: 10px 20px;
-      padding: 20px;
-      background: $bg-color-section;
-      box-shadow: 2px 3px 20px $bg-color-section2;
-      border: none;
-      border-radius: 20px;
-      font-size: 16px;
-      font-weight: 500;
-      box-sizing: border-box;
-      text-decoration: none;
-      color: black;
-      letter-spacing: 0;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
 
-      &:hover {
-        letter-spacing: 2px;
-        color: $main-color;
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+
+    .form__location {
+      height: 50px;
+      width: 100%;
+      background-color: $fourth-color;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+      z-index: 1;
+
+      &--container {
+        display: flex;
+        align-items: center;
       }
 
-      &_list__number {
-        position: absolute;
-        left: -15px;
-        background-color: $main-color;
+      &--icon {
+        color: $bg-color-footer;
+        padding: 17px;
+      }
+
+      &--style {
+        font-family: $font-family-1;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: $bg-color-section;
+      margin-top: -30px;
+      width: 100%;
+      box-sizing: border-box;
+
+      .h1 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      .button__animated {
+        background: linear-gradient($main-color, $gradient-main-color);
         color: $bg-color-section2;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
+        border: none;
+        padding: 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        height: 50px;
+        font-weight: 500;
+        border-radius: 25px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        transition: background 300ms ease-out, box-shadow 300ms ease-out,
+          opacity 300ms ease-out;
+
+        &:hover {
+          background: linear-gradient($gradient-main-color, $main-color);
+          opacity: 0.85;
+          box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
+        }
+      }
+    }
+
+    .operating {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 25px;
+      background: $bg-color-section2;
+      margin: 0;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .button {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        height: 72px;
+        width: calc(100% - 40px);
+        margin: 10px 20px;
+        padding: 20px;
+        background: $bg-color-section;
+        box-shadow: 2px 3px 20px $bg-color-section2;
+        border: none;
+        border-radius: 20px;
         font-size: 16px;
         font-weight: 500;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
 
         &:hover {
-          animation: gelatine 0.5s infinite;
+          color: $main-color;
+          .button__list__number {
+            animation: gelatine 0.5s infinite;
+          }
+        }
+
+        &__list__number {
+          position: absolute;
+          left: -15px;
+          background-color: $main-color;
+          color: $bg-color-section2;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          font-weight: 500;
+
+          &:hover {
+            animation: gelatine 0.5s infinite;
+          }
+        }
+
+        &__icon {
+          margin: 0 20px 0 20px;
+          color: $bg-color-footer;
+        }
+
+        &__text {
+          font-family: "Roboto", sans-serif;
+          font-style: normal;
+          line-height: 1.2rem;
+          font-weight: 300;
+          font-size: 16px;
+          flex-grow: 1;
+          text-align: center;
         }
       }
 
-      &__icon {
-        margin: 0 20px 0 20px;
-        color: $bg-color-footer;
+      .choose {
+        display: none;
+
+        &:checked + label .choose__like .button__icon--yes {
+          display: inline-block;
+          color: $main-color;
+        }
+
+        &:not(:checked) + label .choose__like .button__icon--no {
+          display: inline-block;
+          color: $bg-color-footer;
+        }
       }
 
-      &__text {
-        font-family: "Roboto", sans-serif;
-        font-style: normal;
-        line-height: 1.2rem;
-        font-weight: 300;
-        font-size: 16px;
-        flex-grow: 1;
-        text-align: center;
+      .choose + label {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .choose__like {
+          display: flex;
+          align-items: center;
+          border-radius: 5px;
+
+          .button__icon--no,
+          .button__icon--yes {
+            display: none;
+
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
       }
     }
-  }
-}
 
-.choose {
-  display: none;
-
-  &:checked + label .choose__like .button__icon--yes {
-    display: inline-block;
-    color: $main-color;
-  }
-
-  &:not(:checked) + label .choose__like .button__icon--no {
-    display: inline-block;
-    color: $bg-color-footer;
-  }
-}
-
-.choose + label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  .choose__like {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-
-    .button__icon--no,
-    .button__icon--yes {
-      display: none;
-
-      &:hover {
-        color: $main-color;
-      }
-    }
-  }
-}
-
-.restaurants {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  padding: 20px;
-  background-color: $bg-color-section;
-
-  h2 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 0;
-  }
-
-  &__cards {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    background-color: $bg-color-section2;
-    border: 1px solid $bg-color-section2;
-    border-radius: 15px;
-    overflow: hidden;
-    text-decoration: none;
-    box-sizing: border-box;
-    position: relative;
-
-    &__img {
-      width: 100%;
-      height: auto;
-      max-height: 250px;
-      object-fit: cover;
-    }
-
-    &__content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .restaurants {
       padding: 20px;
+      background-color: $bg-color-section;
 
-      .card__txt {
+      &__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+
+      &__cards {
         display: flex;
         flex-direction: column;
-        gap: 7px;
-        color: $title-color;
+        gap: 18px;
+      }
 
-        .card__title {
-          font-size: 18px;
-          margin: 0;
-          font-weight: bold;
+      .card {
+        display: flex;
+        flex-direction: column;
+        background-color: $bg-color-section2;
+        border: 1px solid $bg-color-section2;
+        border-radius: 15px;
+        overflow: hidden;
+        text-decoration: none;
+        box-sizing: border-box;
+        position: relative;
+
+        &__img {
+          width: 100%;
+          height: auto;
+          max-height: 250px;
+          object-fit: cover;
         }
 
-        .card__subtitle {
-          font-size: 17px;
-          font-weight: 200;
-          margin: 0;
+        &__content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+
+          .card__txt {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            color: $title-color;
+
+            .card__title {
+              font-size: 18px;
+              margin: 0;
+              font-weight: bold;
+            }
+
+            .card__subtitle {
+              font-size: 17px;
+              font-weight: 200;
+              margin: 0;
+            }
+
+            .like {
+              display: none;
+
+              &:checked + label .restaurants__like .restaurants__like--bg {
+                display: inline-block;
+                background: linear-gradient(
+                  45deg,
+                  $main-color,
+                  $gradient-main-color
+                );
+                @include background-clip;
+                -webkit-text-fill-color: transparent;
+                transition: background 0.3s;
+              }
+
+              &:checked + label .restaurants__like .restaurants__like--nobg {
+                display: none;
+              }
+
+              &:not(:checked)
+                + label
+                .restaurants__like
+                .restaurants__like--nobg {
+                display: inline-block;
+                color: $title-color;
+                font-weight: 200;
+              }
+
+              &:not(:checked)
+                + label
+                .restaurants__like
+                .restaurants__like--bg {
+                display: none;
+              }
+            }
+
+            .like + label {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+
+              .restaurants__like {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px;
+              }
+            }
+          }
+          .like {
+            display: none;
+
+            &:checked + label .restaurants__like .restaurants__like--bg {
+              display: inline-block;
+              background: linear-gradient(
+                45deg,
+                $main-color,
+                $gradient-main-color
+              );
+              @include background-clip;
+              -webkit-text-fill-color: transparent;
+              transition: background 0.3s;
+            }
+
+            &:checked + label .restaurants__like .restaurants__like--nobg {
+              display: none;
+            }
+
+            &:not(:checked)
+              + label
+              .restaurants__like
+              .restaurants__like--nobg {
+              display: inline-block;
+              color: $title-color;
+              font-weight: 200;
+            }
+
+            &:not(:checked) + label .restaurants__like .restaurants__like--bg {
+              display: none;
+            }
+          }
+
+          .like + label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            .restaurants__like {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 5px;
+            }
+          }
+        }
+        .newtag {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          background-color: $filter-thirth-color;
+          color: $thirth-color;
+          padding: 5px 10px;
+          border-radius: 2px;
+          z-index: 1;
         }
       }
     }
   }
-}
 
-.like {
-  display: none;
-
-  &:checked + label .restaurants__like .restaurants__like--bg {
-    display: inline-block;
-    background: linear-gradient(45deg, $main-color, $gradient-main-color);
-    @include background-clip;
-    -webkit-text-fill-color: transparent;
-    transition: background 0.3s;
-  }
-
-  &:checked + label .restaurants__like .restaurants__like--nobg {
-    display: none;
-  }
-
-  &:not(:checked) + label .restaurants__like .restaurants__like--nobg {
-    display: inline-block;
-    color: $title-color;
-    font-weight: 200;
-  }
-
-  &:not(:checked) + label .restaurants__like .restaurants__like--bg {
-    display: none;
-  }
-}
-
-.like + label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-
-  .restaurants__like {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-  }
-}
-
-.newtag {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  background-color: $filter-thirth-color;
-  color: $thirth-color;
-  padding: 5px 10px;
-  border-radius: 2px;
-  z-index: 1;
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background-color: $bg-color-footer;
-  color: $bg-color-section2;
-  padding: 22px 25px;
-
-  &__title {
-    @include font__family-2;
-    font-size: 18px;
-    margin: 0;
-  }
-
-  &__list {
+  .footer {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+    gap: 16px;
+    background-color: $bg-color-footer;
+    color: $bg-color-section2;
+    padding: 22px 25px;
 
-  .footer__link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
+    &__title {
+      @include font__family-2;
+      font-size: 18px;
+      margin: 0;
+    }
 
-    &--icon {
-      margin-right: 7px;
-      font-size: 13px;
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer__link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+
+      &--icon {
+        margin-right: 7px;
+        font-size: 13px;
+      }
     }
   }
 }
@@ -471,20 +531,46 @@ body {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 768px) {
   .mobile-only {
-    display: block;
+    display: flex;
   }
 }
 
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
-  .title {
-    h1 {
-      font-size: 32px;
-    }
-  }
+  body {
+    display: flex;
+    .main {
+      .title {
+        h1 {
+          font-size: 32px;
+        }
+      }
+      .operating {
+        box-sizing: border-box;
+        padding: 20px 50px;
 
-  .operating {
-    flex-direction: row;
+        &__container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .button {
+            width: auto;
+          }
+        }
+      }
+      .restaurants {
+        padding: 20px 50px;
+        width: 100%;
+        box-sizing: border-box;
+        .restaurants__cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          row-gap: 30px;
+          column-gap: 50px;
+        }
+      }
+    }
   }
 }
 
@@ -492,13 +578,44 @@ body {
 @media (min-width: 1024px) {
   body {
     display: flex;
-
-    main {
+    justify-content: center;
+    .main {
       .title {
         h1 {
           font-size: 40px;
         }
       }
+      .operating {
+        padding: 20px 110px;
+
+        &__container {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+      .restaurants {
+        padding: 20px 110px;
+        width: 100%;
+        box-sizing: border-box;
+
+        h2 {
+          margin-bottom: 30px;
+        }
+
+        .restaurants__cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          row-gap: 30px;
+          column-gap: 70px;
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      gap: 16px;
+      background-color: $bg-color-footer;
+      color: $bg-color-section2;
+      padding: 22px 25px;
     }
   }
 }
