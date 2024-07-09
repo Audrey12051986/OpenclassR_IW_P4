@@ -258,6 +258,7 @@ body .main .operating .choose + label .choose__like .button__icon--yes:hover {
 body .main .restaurants {
   padding: 20px;
   background-color: #f6f6f6;
+  width: calc(100% - 40px);
 }
 body .main .restaurants__cards {
   display: grid;
@@ -267,7 +268,7 @@ body .main .restaurants__cards {
 body .main .restaurants h2 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 0;
+  margin: 20px 0;
 }
 body .main .restaurants__cards {
   display: flex;
@@ -433,7 +434,7 @@ body .footer .footer__link--icon {
   }
 }
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   body {
     display: flex;
   }
@@ -514,8 +515,7 @@ body {
   min-width: 320px;
   font-family: "Roboto", sans-serif;
 }
-
-.headerrest {
+body .headerrest {
   display: flex;
   gap: 40px;
   height: 63px;
@@ -525,7 +525,7 @@ body {
   align-items: center;
   position: relative;
 }
-.headerrest__arrow {
+body .headerrest__arrow {
   font-size: 30px;
   margin: 0;
   color: #353535;
@@ -533,11 +533,11 @@ body {
   left: 30px;
   top: 30px;
 }
-.headerrest__arrow--back {
+body .headerrest__arrow--back {
   border: none;
   text-decoration: none;
 }
-.headerrest__logo {
+body .headerrest__logo {
   font-family: shrikhand;
   font-style: italic;
   font-weight: 400;
@@ -545,23 +545,22 @@ body {
   font-size: 30px;
   text-align: center;
 }
-.headerrest h1 {
+body .headerrest h1 {
   margin: 0;
 }
-
-.mainrest {
+body .mainrest {
   position: relative;
   display: grid;
   grid-auto-columns: 1fr;
   gap: 40px;
 }
-.mainrest .banner__img {
+body .mainrest .banner__img {
   height: 18rem;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
-.mainrest .restaurant {
+body .mainrest .restaurant {
   margin-top: -80px;
   padding: 20px;
   display: flex;
@@ -572,12 +571,12 @@ body {
   /*z-index: 1;
   position: relative;*/
 }
-.mainrest .restaurant__header {
+body .mainrest .restaurant__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.mainrest .restaurant__title {
+body .mainrest .restaurant__header .restaurant__title {
   font-family: shrikhand;
   font-style: italic;
   font-weight: 400;
@@ -586,21 +585,20 @@ body {
   margin: 0;
   color: #101010;
 }
-
-#like {
+body .mainrest .restaurant__header #like {
   display: none;
 }
-#like + label .restaurant__like--nobg {
+body .mainrest .restaurant__header #like + label .restaurant__like--nobg {
   color: #101010;
   transition: color 0.3s;
 }
-#like + label .restaurant__like--bg {
+body .mainrest .restaurant__header #like + label .restaurant__like--bg {
   display: none;
 }
-#like:checked + label .restaurant__like--nobg {
+body .mainrest .restaurant__header #like:checked + label .restaurant__like--nobg {
   display: none;
 }
-#like:checked + label .restaurant__like--bg {
+body .mainrest .restaurant__header #like:checked + label .restaurant__like--bg {
   display: inline-block;
   background: linear-gradient(45deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
@@ -608,29 +606,28 @@ body {
   -webkit-text-fill-color: transparent;
   transition: color 0.3s;
 }
-#like__like {
+body .mainrest .restaurant__header #like__like {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.menu {
+body .mainrest .restaurant .menu {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.menu__list {
+body .mainrest .restaurant .menu__list {
   display: grid;
   gap: 12px;
 }
-.menu__list h3 {
+body .mainrest .restaurant .menu__list h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
   position: relative;
 }
-.menu__list h3:after {
+body .mainrest .restaurant .menu__list h3:after {
   content: "";
   width: 40px;
   height: 3px;
@@ -639,75 +636,64 @@ body {
   left: 0;
   top: 24px;
 }
-.menu__list h4 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 18px;
-  margin: 0;
-}
-
-.cardrest__container {
+body .mainrest .restaurant .menu__list .cardrest__container {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.cardrest__container .cardrest {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+body .mainrest .restaurant .menu__list .cardrest {
   position: relative;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  /* width: 100%;*/
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   overflow: hidden;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
-.cardrest__container .cardrest:hover, input[type=checkbox]:checked + label .cardrest__container .cardrest {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+body .mainrest .restaurant .menu__list .cardrest__content {
+  display: flex;
+  flex-direction: column;
 }
-.cardrest__container .cardrest__content {
-  display: inline-flex;
-  gap: 5px;
-  justify-content: space-between;
-  width: 100%;
-}
-.cardrest__container .cardrest__txt {
+body .mainrest .restaurant .menu__list .cardrest__content .cardrest__txt {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.cardrest__container .cardrest__title {
+body .mainrest .restaurant .menu__list .cardrest__content .cardrest__txt .cardrest__title {
   font-weight: 500;
   font-size: 18px;
   margin: 0;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
-.cardrest__container .cardrest__subtitle {
+body .mainrest .restaurant .menu__list .cardrest__content .cardrest__txt .cardrest__title h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+}
+body .mainrest .restaurant .menu__list .cardrest__content .cardrest__txt .cardrest__subtitle {
   font-weight: 300;
   font-size: 15px;
+  margin: 0;
 }
-.cardrest__container .cardrest__price {
+body .mainrest .restaurant .menu__list .cardrest__price {
+  position: absolute;
   display: flex;
   align-items: flex-end;
   font-weight: 700;
   font-size: 15px;
   color: #353535;
-  transition: transform 0.25s ease-out;
-  position: absolute;
   right: 15px;
   bottom: 15px;
+  transition: transform 0.25s ease-out;
 }
-.cardrest__container .cardrest p {
-  margin: 0;
-}
-
-.confirmation__cardrest {
-  display: none;
-}
-
-.menu__confirmation {
+body .mainrest .restaurant .menu__list .cardrest .menu__confirmation {
   position: absolute;
   right: -59px;
   top: 50%;
@@ -715,44 +701,38 @@ body {
   width: 59px;
   height: 100%;
   background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   transition: right 0.25s ease-out;
 }
-.menu__confirmation .menu__wrapicon {
+body .mainrest .restaurant .menu__list .cardrest .menu__confirmation .menu__wrapicon {
   border-radius: 50%;
   padding: 5px;
   background-color: #ffffff;
 }
-.menu__confirmation .menu__icon {
+body .mainrest .restaurant .menu__list .cardrest .menu__confirmation .menu__wrapicon .menu__icon {
   color: #99e2d0;
   font-size: 1.5rem;
   transition: 0.25s ease-in-out;
 }
-.menu__confirmation .menu__confirmation label {
-  width: 100%;
-}
-
-input[type=checkbox]:checked + label .menu__confirmation,
-.cardrest:hover .menu__confirmation {
+body .mainrest .restaurant .menu__list .cardrest:hover .menu__confirmation,
+body .mainrest .restaurant .menu__list .cardrest input[type=checkbox]:checked + label .menu__confirmation {
   right: 0;
 }
-
-input[type=checkbox]:not(:checked) + label .menu__confirmation {
-  transition: right 0.25s ease-out;
-}
-
-input[type=checkbox]:checked + label .cardrest__price,
-.cardrest:hover .cardrest__price {
+body .mainrest .restaurant .menu__list .cardrest:hover .cardrest__price,
+body .mainrest .restaurant .menu__list .cardrest input[type=checkbox]:checked + label .cardrest__price {
   transform: translateX(-59px);
 }
-
-input[type=checkbox]:not(:checked) + label .cardrest__price {
-  transition: transform 0.25s ease-out;
+body .mainrest .restaurant .menu__list .cardrest input[type=checkbox] {
+  display: none;
 }
-
-.button__animated {
+body .mainrest .restaurant .menu__list input.confirmation__cardrest + label {
+  display: block;
+  width: 100%;
+}
+body .mainrest .restaurant .button__animated {
   width: 40%;
   background: linear-gradient(#9356dc, #ff79da);
   color: #ffffff;
@@ -769,13 +749,12 @@ input[type=checkbox]:not(:checked) + label .cardrest__price {
   margin-bottom: 20px;
   transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
 }
-.button__animated:hover {
+body .mainrest .restaurant .button__animated:hover {
   background: linear-gradient(#ff79da, #9356dc);
   opacity: 0.85;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
-
-.footer {
+body .footer {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -783,27 +762,27 @@ input[type=checkbox]:not(:checked) + label .cardrest__price {
   color: #ffffff;
   padding: 22px 25px;
 }
-.footer__title {
+body .footer__title {
   font-family: shrikhand;
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
 }
-.footer__list {
+body .footer__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.footer__listelt {
+body .footer__listelt {
   margin-bottom: 7px;
 }
-.footer__link {
+body .footer__link {
   text-decoration: none;
   color: inherit;
   display: flex;
   align-items: center;
 }
-.footer__link--icon {
+body .footer__link--icon {
   margin-right: 7px;
   font-size: 13px;
 }
