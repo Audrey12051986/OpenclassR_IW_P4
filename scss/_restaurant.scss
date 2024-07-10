@@ -389,19 +389,16 @@ body {
       }
     }
     .footer {
-      position: relative;
       display: flex;
       flex-direction: row-reverse;
-      align-items: center;
+      align-items: end;
       gap: 16px;
       background-color: $bg-color-footer;
       color: $bg-color-section2;
       padding: 22px 25px;
 
       &__title {
-        position: absolute;
-        right: 50px;
-        bottom: 50px;
+        padding: 0 30px;
       }
 
       &__list {

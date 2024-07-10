@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   max-width: 1440px;
   min-width: 320px;
@@ -85,14 +85,14 @@ body .header__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
 }
 body .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin: 0;
+  margin: 0 auto;
+  width: 100%;
 }
 body .main .form__location {
   height: 50px;
@@ -194,6 +194,9 @@ body .main .operating .button:hover {
 }
 body .main .operating .button:hover .button__list__number {
   animation: gelatine 0.5s infinite;
+}
+body .main .operating .button:hover .button__icon {
+  color: #9356dc;
 }
 body .main .operating .button__list__number {
   position: absolute;
@@ -407,9 +410,9 @@ body .footer__title {
   margin: 0;
 }
 body .footer__list {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 7px;*/
   list-style: none;
   padding: 0;
   margin: 0;
@@ -472,23 +475,43 @@ body .footer .footer__link--icon {
     display: flex;
     justify-content: center;
   }
+  body .main .form__location {
+    box-shadow: none;
+  }
+  body .main .title {
+    gap: 30px;
+  }
   body .main .title h1 {
     font-size: 40px;
+    margin: 0;
+  }
+  body .main .title p {
+    margin: 0;
+  }
+  body .main .title .button__animated {
+    margin-top: 0;
   }
   body .main .operating {
-    padding: 20px 110px;
+    padding: 20px 180px;
+    gap: 25px;
+  }
+  body .main .operating h2 {
+    margin: 0;
   }
   body .main .operating__container {
     display: flex;
     flex-direction: row;
   }
   body .main .restaurants {
-    padding: 20px 110px;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 180px;
     width: 100%;
     box-sizing: border-box;
+    gap: 28px;
   }
   body .main .restaurants h2 {
-    margin-bottom: 30px;
+    margin: 0;
   }
   body .main .restaurants .restaurants__cards {
     display: grid;
@@ -499,10 +522,23 @@ body .footer .footer__link--icon {
   }
   body .footer {
     display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
     padding: 22px 25px;
+  }
+  body .footer__title {
+    padding: 0 30px;
+  }
+  body .footer__list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 }
 body {
@@ -825,19 +861,16 @@ body .footer__link--icon {
     width: auto;
   }
   body .footer {
-    position: relative;
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
+    align-items: end;
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
     padding: 22px 25px;
   }
   body .footer__title {
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
+    padding: 0 30px;
   }
   body .footer__list {
     display: flex;
