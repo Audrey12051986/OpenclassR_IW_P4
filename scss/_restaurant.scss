@@ -382,6 +382,15 @@ body {
         box-sizing: border-box;
         align-self: center;
 
+        &__header {
+          justify-content: center;
+          gap: 40px;
+        }
+
+        .menu {
+          padding: 30px 140px;
+        }
+
         .button__animated {
           padding: 20px 60px;
           width: auto;
@@ -396,9 +405,11 @@ body {
       background-color: $bg-color-footer;
       color: $bg-color-section2;
       padding: 22px 25px;
+      height: 114px;
 
       &__title {
         padding: 0 30px;
+        height: 27px;
       }
 
       &__list {

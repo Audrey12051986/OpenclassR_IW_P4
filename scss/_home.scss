@@ -158,6 +158,7 @@ body {
     .title {
       display: flex;
       flex-direction: column;
+      gap: 30px;
       align-items: center;
       text-align: center;
       padding: 40px 20px;
@@ -169,6 +170,7 @@ body {
       .h1 {
         font-size: 24px;
         font-weight: 700;
+        margin: 0;
       }
 
       p {
@@ -181,7 +183,7 @@ body {
         color: $bg-color-section2;
         border: none;
         padding: 20px;
-        margin-top: 20px;
+        /*margin-top: 20px;*/
         font-size: 16px;
         height: 50px;
         font-weight: 500;
@@ -543,12 +545,14 @@ body {
 @media (min-width: 768px) {
   body {
     display: flex;
+
     .main {
       .title {
         h1 {
           font-size: 32px;
         }
       }
+
       .operating {
         box-sizing: border-box;
         padding: 20px 50px;
@@ -563,16 +567,48 @@ body {
           }
         }
       }
+
       .restaurants {
         padding: 20px 50px;
         width: 100%;
         box-sizing: border-box;
+
         .restaurants__cards {
           display: grid;
           grid-template-columns: 1fr 1fr;
           row-gap: 30px;
           column-gap: 50px;
+
+          .card {
+            &__img {
+              max-height: 191px;
+            }
+          }
         }
+      }
+    }
+    .footer {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: end;
+      gap: 16px;
+      background-color: $bg-color-footer;
+      color: $bg-color-section2;
+      padding: 22px 25px;
+      flex-wrap: nowrap;
+      height: 114px;
+
+      &__title {
+        padding: 0 30px;
+      }
+
+      &__list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 7px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
       }
     }
   }
@@ -635,28 +671,6 @@ body {
           row-gap: 30px;
           column-gap: 70px;
         }
-      }
-    }
-    .footer {
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: end;
-      gap: 16px;
-      background-color: $bg-color-footer;
-      color: $bg-color-section2;
-      padding: 22px 25px;
-
-      &__title {
-        padding: 0 30px;
-      }
-
-      &__list {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 7px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
       }
     }
   }

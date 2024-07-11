@@ -119,6 +119,7 @@ body .main .form__location--style {
 body .main .title {
   display: flex;
   flex-direction: column;
+  gap: 30px;
   align-items: center;
   text-align: center;
   padding: 40px 20px;
@@ -130,6 +131,7 @@ body .main .title {
 body .main .title .h1 {
   font-size: 24px;
   font-weight: 700;
+  margin: 0;
 }
 body .main .title p {
   font-size: 18px;
@@ -140,7 +142,7 @@ body .main .title .button__animated {
   color: #ffffff;
   border: none;
   padding: 20px;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   font-size: 16px;
   height: 50px;
   font-weight: 500;
@@ -468,6 +470,31 @@ body .footer .footer__link--icon {
     -moz-column-gap: 50px;
          column-gap: 50px;
   }
+  body .main .restaurants .restaurants__cards .card__img {
+    max-height: 191px;
+  }
+  body .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+    gap: 16px;
+    background-color: #353535;
+    color: #ffffff;
+    padding: 22px 25px;
+    flex-wrap: nowrap;
+    height: 114px;
+  }
+  body .footer__title {
+    padding: 0 30px;
+  }
+  body .footer__list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 7px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 /*desktop */
 @media (min-width: 1024px) {
@@ -519,26 +546,6 @@ body .footer .footer__link--icon {
     row-gap: 30px;
     -moz-column-gap: 70px;
          column-gap: 70px;
-  }
-  body .footer {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: end;
-    gap: 16px;
-    background-color: #353535;
-    color: #ffffff;
-    padding: 22px 25px;
-  }
-  body .footer__title {
-    padding: 0 30px;
-  }
-  body .footer__list {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 7px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 }
 body {
@@ -856,6 +863,13 @@ body .footer__link--icon {
     box-sizing: border-box;
     align-self: center;
   }
+  body .mainrest .restaurant__header {
+    justify-content: center;
+    gap: 40px;
+  }
+  body .mainrest .restaurant .menu {
+    padding: 30px 140px;
+  }
   body .mainrest .restaurant .button__animated {
     padding: 20px 60px;
     width: auto;
@@ -868,9 +882,11 @@ body .footer__link--icon {
     background-color: #353535;
     color: #ffffff;
     padding: 22px 25px;
+    height: 114px;
   }
   body .footer__title {
     padding: 0 30px;
+    height: 27px;
   }
   body .footer__list {
     display: flex;
