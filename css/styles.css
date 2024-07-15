@@ -21,7 +21,7 @@
     transform: scale(0.9, 1.1);
   }
   50% {
-    transform: sclae(1.1, 0.9);
+    transform: scale(1.1, 0.9);
   }
   75% {
     transform: scale(0.95, 1.05);
@@ -36,6 +36,9 @@ body {
   max-width: 1440px;
   min-width: 320px;
   font-family: roboto;
+}
+body h3 {
+  margin: 0;
 }
 body .loader__page {
   position: fixed;
@@ -265,22 +268,18 @@ body .main .restaurants {
   background-color: #f6f6f6;
   width: calc(100% - 40px);
 }
-body .main .restaurants__cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
 body .main .restaurants h2 {
   font-size: 24px;
   font-weight: 700;
   margin: 20px 0;
 }
 body .main .restaurants__cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 18px;
 }
-body .main .restaurants .card {
+body .main .restaurants__cards .restaurants__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -289,104 +288,43 @@ body .main .restaurants .card {
   overflow: hidden;
   text-decoration: none;
   box-sizing: border-box;
-  position: relative;
+  /*height: 251px;*/
 }
-body .main .restaurants .card__img {
+body .main .restaurants__cards .restaurants__card .card {
+  text-decoration: none;
+}
+body .main .restaurants__cards .restaurants__card .card .card__img {
   width: 100%;
-  height: auto;
-  max-height: 250px;
+  height: 231px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .main .restaurants .card__content {
+body .main .restaurants__cards .restaurants__card .card__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
 }
-body .main .restaurants .card__content .card__txt {
+body .main .restaurants__cards .restaurants__card .card__content a {
+  text-decoration: none;
+}
+body .main .restaurants__cards .restaurants__card .card__content .card__txt {
   display: flex;
   flex-direction: column;
   gap: 7px;
   color: #101010;
 }
-body .main .restaurants .card__content .card__txt .card__title {
+body .main .restaurants__cards .restaurants__card .card__content .card__txt .card__title {
   font-size: 18px;
   margin: 0;
   font-weight: bold;
 }
-body .main .restaurants .card__content .card__txt .card__subtitle {
+body .main .restaurants__cards .restaurants__card .card__content .card__txt .card__subtitle {
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 300;
   margin: 0;
 }
-body .main .restaurants .card__content .card__txt .like {
-  display: none;
-}
-body .main .restaurants .card__content .card__txt .like:checked + label .restaurants__like .restaurants__like--bg {
-  display: inline-block;
-  background: linear-gradient(45deg, #9356dc, #ff79da);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background 0.3s;
-}
-body .main .restaurants .card__content .card__txt .like:checked + label .restaurants__like .restaurants__like--nobg {
-  display: none;
-}
-body .main .restaurants .card__content .card__txt .like:not(:checked) + label .restaurants__like .restaurants__like--nobg {
-  display: inline-block;
-  color: #101010;
-  font-weight: 200;
-}
-body .main .restaurants .card__content .card__txt .like:not(:checked) + label .restaurants__like .restaurants__like--bg {
-  display: none;
-}
-body .main .restaurants .card__content .card__txt .like + label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-body .main .restaurants .card__content .card__txt .like + label .restaurants__like {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-}
-body .main .restaurants .card__content .like {
-  display: none;
-}
-body .main .restaurants .card__content .like:checked + label .restaurants__like .restaurants__like--bg {
-  display: inline-block;
-  background: linear-gradient(45deg, #9356dc, #ff79da);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background 0.3s;
-}
-body .main .restaurants .card__content .like:checked + label .restaurants__like .restaurants__like--nobg {
-  display: none;
-}
-body .main .restaurants .card__content .like:not(:checked) + label .restaurants__like .restaurants__like--nobg {
-  display: inline-block;
-  color: #101010;
-  font-weight: 200;
-}
-body .main .restaurants .card__content .like:not(:checked) + label .restaurants__like .restaurants__like--bg {
-  display: none;
-}
-body .main .restaurants .card__content .like + label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-body .main .restaurants .card__content .like + label .restaurants__like {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-}
-body .main .restaurants .card .newtag {
+body .main .restaurants__cards .restaurants__card .newtag {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -395,6 +333,39 @@ body .main .restaurants .card .newtag {
   padding: 5px 10px;
   border-radius: 2px;
   z-index: 1;
+}
+body .main .restaurants .like {
+  display: none;
+}
+body .main .restaurants .like:checked + label .restaurants__like .restaurants__like--bg {
+  display: inline-block;
+  background: linear-gradient(45deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.3s;
+}
+body .main .restaurants .like:checked + label .restaurants__like .restaurants__like--nobg {
+  display: none;
+}
+body .main .restaurants .like:not(:checked) + label .restaurants__like .restaurants__like--nobg {
+  display: inline-block;
+  color: #101010;
+  font-weight: 200;
+}
+body .main .restaurants .like:not(:checked) + label .restaurants__like .restaurants__like--bg {
+  display: none;
+}
+body .main .restaurants .like + label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+body .main .restaurants .like + label .restaurants__like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
 }
 body .footer {
   display: flex;
@@ -463,14 +434,14 @@ body .footer .footer__link--icon {
     width: 100%;
     box-sizing: border-box;
   }
-  body .main .restaurants .restaurants__cards {
+  body .main .restaurants__cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 30px;
     -moz-column-gap: 50px;
          column-gap: 50px;
   }
-  body .main .restaurants .restaurants__cards .card__img {
+  body .main .restaurants__cards .card__img {
     max-height: 191px;
   }
   body .footer {
