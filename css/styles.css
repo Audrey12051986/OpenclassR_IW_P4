@@ -131,7 +131,7 @@ body .main .title {
   width: 100%;
   box-sizing: border-box;
 }
-body .main .title .h1 {
+body .main .title__h1 {
   font-size: 24px;
   font-weight: 700;
   margin: 0;
@@ -139,6 +139,7 @@ body .main .title .h1 {
 body .main .title p {
   font-size: 18px;
   font-weight: 300;
+  margin: 0;
 }
 body .main .title .button__animated {
   background: linear-gradient(#9356dc, #ff79da);
@@ -173,6 +174,8 @@ body .main .operating {
   text-align: center;
 }
 body .main .operating h2 {
+  display: flex;
+  align-items: start;
   font-size: 24px;
   font-weight: 700;
 }
@@ -185,6 +188,7 @@ body .main .operating__container .button {
   display: flex;
   align-items: center;
   justify-content: start;
+  gap: 10px;
   position: relative;
   height: 72px;
   width: calc(100% - 40px);
@@ -231,44 +235,11 @@ body .main .operating__container .button__icon {
   color: #353535;
   font-size: 16px;
 }
-body .main .operating__container .button__text {
+body .main .operating__container .button__txt {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  line-height: 1.2rem;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 16px;
-  flex-grow: 1;
-  text-align: center;
-}
-body .main .operating .choose {
-  display: none;
-}
-body .main .operating .choose:checked + label .choose__like .button__icon--yes {
-  display: inline-block;
-  color: #9356dc;
-}
-body .main .operating .choose:not(:checked) + label .choose__like .button__icon--no {
-  display: inline-block;
-  color: #353535;
-}
-body .main .operating .choose + label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-body .main .operating .choose + label .choose__like {
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-}
-body .main .operating .choose + label .choose__like .button__icon--no,
-body .main .operating .choose + label .choose__like .button__icon--yes {
-  display: none;
-}
-body .main .operating .choose + label .choose__like .button__icon--no:hover,
-body .main .operating .choose + label .choose__like .button__icon--yes:hover {
-  color: #9356dc;
 }
 body .main .restaurants {
   padding: 20px;
@@ -390,22 +361,25 @@ body .footer__title {
   margin: 0;
 }
 body .footer__list {
-  /*display: flex;
-  flex-direction: column;
-  gap: 7px;*/
   list-style: none;
   padding: 0;
   margin: 0;
+}
+body .footer__listelt {
+  margin: 0;
+  padding: 0;
 }
 body .footer .footer__link {
   text-decoration: none;
   color: inherit;
   display: flex;
   align-items: center;
+  gap: 7px;
 }
 body .footer .footer__link--icon {
-  margin-right: 7px;
   font-size: 13px;
+  margin-right: 7px;
+  line-height: 1;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -430,6 +404,7 @@ body .footer .footer__link--icon {
   }
   body .main .operating__container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -455,6 +430,7 @@ body .footer .footer__link--icon {
     display: flex;
     flex-direction: row-reverse;
     align-items: end;
+    justify-content: center;
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
@@ -498,6 +474,8 @@ body .footer .footer__link--icon {
   }
   body .main .operating {
     padding: 20px 180px;
+    display: flex;
+    flex-direction: column;
     gap: 25px;
   }
   body .main .operating h2 {
@@ -505,7 +483,13 @@ body .footer .footer__link--icon {
   }
   body .main .operating__container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  body .main .operating__container .button {
+    width: auto;
+    flex-grow: 1;
+    margin: 10px;
   }
   body .main .restaurants {
     display: flex;
@@ -524,6 +508,9 @@ body .footer .footer__link--icon {
     row-gap: 30px;
     -moz-column-gap: 70px;
          column-gap: 70px;
+  }
+  body .footer {
+    justify-content: flex-start;
   }
 }
 body {
