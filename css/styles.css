@@ -161,24 +161,30 @@ body .main .title .button__animated:hover {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
 body .main .operating {
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 25px;*/
   background: #ffffff;
   margin: 0;
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
 body .main .operating h2 {
   font-size: 24px;
   font-weight: 700;
 }
-body .main .operating .button {
+body .main .operating__container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+body .main .operating__container .button {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   position: relative;
   height: 72px;
   width: calc(100% - 40px);
@@ -194,16 +200,16 @@ body .main .operating .button {
   text-decoration: none;
   color: black;
 }
-body .main .operating .button:hover {
+body .main .operating__container .button:hover {
   color: #9356dc;
 }
-body .main .operating .button:hover .button__list__number {
+body .main .operating__container .button:hover .button__list__number {
   animation: gelatine 0.5s infinite;
 }
-body .main .operating .button:hover .button__icon {
+body .main .operating__container .button:hover .button__icon {
   color: #9356dc;
 }
-body .main .operating .button__list__number {
+body .main .operating__container .button__list__number {
   position: absolute;
   left: -15px;
   background-color: #9356dc;
@@ -217,14 +223,15 @@ body .main .operating .button__list__number {
   font-size: 16px;
   font-weight: 500;
 }
-body .main .operating .button__list__number:hover {
+body .main .operating__container .button__list__number:hover {
   animation: gelatine 0.5s infinite;
 }
-body .main .operating .button__icon {
+body .main .operating__container .button__icon {
   margin: 0 20px 0 20px;
   color: #353535;
+  font-size: 16px;
 }
-body .main .operating .button__text {
+body .main .operating__container .button__text {
   font-family: "Roboto", sans-serif;
   font-style: normal;
   line-height: 1.2rem;

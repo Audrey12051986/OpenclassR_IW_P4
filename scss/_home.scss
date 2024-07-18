@@ -207,82 +207,90 @@ body {
     }
 
     .operating {
-      display: flex;
+      /*display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 25px;*/
       background: $bg-color-section2;
       margin: 0;
       padding: 20px;
       width: 100%;
       box-sizing: border-box;
+      text-align: center;
 
       h2 {
         font-size: 24px;
         font-weight: 700;
       }
 
-      .button {
+      &__container {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        height: 72px;
-        width: calc(100% - 40px);
-        margin: 10px 20px;
-        padding: 20px;
-        background: $bg-color-section;
-        box-shadow: 2px 3px 20px $bg-color-section2;
-        border: none;
-        border-radius: 20px;
-        font-size: 16px;
-        font-weight: 500;
-        box-sizing: border-box;
-        text-decoration: none;
-        color: black;
+        flex-direction: column;
+        gap: 25px;
 
-        &:hover {
-          color: $main-color;
-          .button__list__number {
-            animation: gelatine 0.5s infinite;
-          }
-          .button__icon {
-            color: $main-color;
-          }
-        }
-
-        &__list__number {
-          position: absolute;
-          left: -15px;
-          background-color: $main-color;
-          color: $bg-color-section2;
-          border-radius: 50%;
-          width: 30px;
-          height: 30px;
+        .button {
           display: flex;
           align-items: center;
-          justify-content: center;
+          justify-content: start;
+          position: relative;
+          height: 72px;
+          width: calc(100% - 40px);
+          margin: 10px 20px;
+          padding: 20px;
+          background: $bg-color-section;
+          box-shadow: 2px 3px 20px $bg-color-section2;
+          border: none;
+          border-radius: 20px;
           font-size: 16px;
           font-weight: 500;
+          box-sizing: border-box;
+          text-decoration: none;
+          color: black;
 
           &:hover {
-            animation: gelatine 0.5s infinite;
+            color: $main-color;
+            .button__list__number {
+              animation: gelatine 0.5s infinite;
+            }
+            .button__icon {
+              color: $main-color;
+            }
           }
-        }
 
-        &__icon {
-          margin: 0 20px 0 20px;
-          color: $bg-color-footer;
-        }
+          &__list__number {
+            position: absolute;
+            left: -15px;
+            background-color: $main-color;
+            color: $bg-color-section2;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 500;
 
-        &__text {
-          font-family: "Roboto", sans-serif;
-          font-style: normal;
-          line-height: 1.2rem;
-          font-weight: 300;
-          font-size: 16px;
-          flex-grow: 1;
-          text-align: center;
+            &:hover {
+              animation: gelatine 0.5s infinite;
+            }
+          }
+
+          &__icon {
+            margin: 0 20px 0 20px;
+            color: $bg-color-footer;
+            font-size: 16px;
+          }
+
+          &__text {
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            line-height: 1.2rem;
+            font-weight: 300;
+            font-size: 16px;
+            flex-grow: 1;
+            text-align: center;
+          }
         }
       }
 
