@@ -146,7 +146,6 @@ body .main .title .button__animated {
   color: #ffffff;
   border: none;
   padding: 20px;
-  /*margin-top: 20px;*/
   font-size: 16px;
   height: 50px;
   font-weight: 500;
@@ -162,10 +161,6 @@ body .main .title .button__animated:hover {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
 }
 body .main .operating {
-  /*display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 25px;*/
   background: #ffffff;
   margin: 0;
   padding: 20px;
@@ -266,7 +261,6 @@ body .main .restaurants__cards .restaurants__card {
   overflow: hidden;
   text-decoration: none;
   box-sizing: border-box;
-  /*height: 251px;*/
 }
 body .main .restaurants__cards .restaurants__card .card {
   text-decoration: none;
@@ -577,8 +571,6 @@ body .mainrest .restaurant {
   gap: 30px;
   border-radius: 40px;
   background-color: #ffffff;
-  /*z-index: 1;
-  position: relative;*/
 }
 body .mainrest .restaurant__header {
   display: flex;
@@ -627,7 +619,7 @@ body .mainrest .restaurant .menu {
 }
 body .mainrest .restaurant .menu__list {
   display: grid;
-  gap: 12px;
+  gap: 20px;
 }
 body .mainrest .restaurant .menu__list h3 {
   font-family: "Roboto", sans-serif;
@@ -652,48 +644,13 @@ body .mainrest .restaurant .menu__list .cardrest__container {
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest {
   position: relative;
-  /*display: flex;
-  gap: 5px;
-  justify-content: space-between;*/
   padding: 15px;
   border-radius: 15px;
   transition: transform 0.3s ease;
-  /* width: 100%;*/
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   overflow: hidden;
   transition: background-color 0.3s, box-shadow 0.3s;
-  /* &:hover .menu__confirmation,
-  input[type="checkbox"]:checked + label .menu__confirmation {
-    right: 0;
-  }
-
-  &:hover .cardrest__price,
-  input[type="checkbox"]:checked + label .cardrest__price {
-    transform: translateX(-59px);
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }*/
-  /*&:hover .menu__confirmation,
-  &:hover .cardrest__price {
-    right: 0;
-    transform: translateX(-59px);
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }*/
-  /* input[type="checkbox"]:checked
-    ~ .cardrest__content
-    .cardrest__price {
-    transform: translateX(-59px);
-  }
-
-  input[type="checkbox"]:checked ~ .menu__confirmation {
-    right: 0;
-  }*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__label {
   position: absolute;
@@ -705,16 +662,11 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__label {
   z-index: 1;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content {
-  /*display: flex;
-  flex-direction: column;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt {
-  /*display: flex;
-  flex-direction: column;
-  gap: 5px;*/
   display: block;
   flex: 1;
 }
@@ -854,8 +806,14 @@ body .footer__link--icon {
   }
 }
 /* Medium devices (tablets, less/equal than 1024px) */
-/*@media (max-width: 1024px) {
-}*/
+@media (min-width: 768px) {
+  body .mainrest .restaurant__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+}
 /*desktop */
 @media (min-width: 1025px) {
   body {

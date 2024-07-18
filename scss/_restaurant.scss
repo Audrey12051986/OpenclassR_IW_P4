@@ -90,8 +90,6 @@ body {
       gap: 30px;
       border-radius: 40px;
       background-color: $bg-color-section2;
-      /*z-index: 1;
-      position: relative;*/
 
       &__header {
         display: flex;
@@ -149,7 +147,7 @@ body {
 
         &__list {
           display: grid;
-          gap: 12px;
+          gap: 20px;
 
           h3 {
             font-family: $font-family-1;
@@ -176,13 +174,9 @@ body {
 
             .cardrest {
               position: relative;
-              /*display: flex;
-            gap: 5px;
-            justify-content: space-between;*/
               padding: 15px;
               border-radius: 15px;
               transition: transform 0.3s ease;
-              /* width: 100%;*/
               box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
               background-color: $bg-color-section2;
               overflow: hidden;
@@ -199,16 +193,11 @@ body {
               }
 
               &__content {
-                /*display: flex;
-              flex-direction: column;*/
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
                 .cardrest__txt {
-                  /*display: flex;
-                flex-direction: column;
-                gap: 5px;*/
                   display: block;
                   flex: 1;
 
@@ -294,38 +283,6 @@ body {
               input[type="checkbox"]:checked ~ .menu__confirmation {
                 right: 0;
               }
-              /* &:hover .menu__confirmation,
-              input[type="checkbox"]:checked + label .menu__confirmation {
-                right: 0;
-              }
-
-              &:hover .cardrest__price,
-              input[type="checkbox"]:checked + label .cardrest__price {
-                transform: translateX(-59px);
-              }
-
-              input[type="checkbox"] {
-                display: none;
-              }*/
-              /*&:hover .menu__confirmation,
-              &:hover .cardrest__price {
-                right: 0;
-                transform: translateX(-59px);
-              }
-
-              input[type="checkbox"] {
-                display: none;
-              }*/
-
-              /* input[type="checkbox"]:checked
-                ~ .cardrest__content
-                .cardrest__price {
-                transform: translateX(-59px);
-              }
-
-              input[type="checkbox"]:checked ~ .menu__confirmation {
-                right: 0;
-              }*/
             }
 
             input.confirmation__cardrest + label {
@@ -412,14 +369,27 @@ body {
 }
 
 /* Medium devices (tablets, less/equal than 1024px) */
-/*@media (max-width: 1024px) {
-}*/
+@media (min-width: 768px) {
+  body {
+    .mainrest {
+      .restaurant {
+        &__header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+        }
+      }
+    }
+  }
+}
 
 /*desktop */
 @media (min-width: 1025px) {
   body {
     display: flex;
     justify-content: center;
+
     .mainrest {
       display: flex;
       flex-direction: column;
@@ -452,6 +422,7 @@ body {
         }
       }
     }
+
     .footer {
       display: flex;
       flex-direction: row-reverse;

@@ -188,7 +188,6 @@ body {
         color: $bg-color-section2;
         border: none;
         padding: 20px;
-        /*margin-top: 20px;*/
         font-size: 16px;
         height: 50px;
         font-weight: 500;
@@ -208,10 +207,6 @@ body {
     }
 
     .operating {
-      /*display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      gap: 25px;*/
       background: $bg-color-section2;
       margin: 0;
       padding: 20px;
@@ -322,7 +317,6 @@ body {
           overflow: hidden;
           text-decoration: none;
           box-sizing: border-box;
-          /*height: 251px;*/
 
           .card {
             text-decoration: none;
