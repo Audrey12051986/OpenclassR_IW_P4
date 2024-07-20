@@ -396,14 +396,12 @@ body {
     }
     .footer {
       display: flex;
-      flex-direction: row-reverse;
       align-items: center;
       justify-content: center;
       gap: 16px;
       background-color: $bg-color-footer;
       color: $bg-color-section2;
       padding: 22px 25px;
-      flex-wrap: wrap;
       height: 114px;
 
       &__title {
