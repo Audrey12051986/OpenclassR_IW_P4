@@ -383,7 +383,7 @@ body .footer {
   gap: 16px;
   background-color: #353535;
   color: #ffffff;
-  padding: 22px 25px;
+  padding: 30px 25px;
 }
 body .footer__title {
   font-family: shrikhand;
@@ -472,11 +472,10 @@ body .footer .footer__link--icon {
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
-    padding: 22px 25px;
+    padding: 30px 25px;
     height: 114px;
   }
   body .footer__title {
-    padding: 0 30px;
     height: 27px;
     margin-bottom: 2px;
   }
@@ -936,7 +935,7 @@ body .footer {
   gap: 16px;
   background-color: #353535;
   color: #ffffff;
-  padding: 22px 25px;
+  padding: 30px 25px;
 }
 body .footer__title {
   font-family: shrikhand;
@@ -997,12 +996,11 @@ body .footer .footer__link--icon {
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
-    padding: 22px 25px;
+    padding: 30px 25px;
     flex-wrap: wrap;
     height: 114px;
   }
   body .footer__title {
-    padding: 0 30px;
     height: 27px;
     margin-bottom: 2px;
   }
