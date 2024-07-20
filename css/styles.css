@@ -14,7 +14,8 @@
   }
 }
 @keyframes gelatine {
-  from, to {
+  from,
+  to {
     transform: scale(1, 1);
   }
   25% {
@@ -153,7 +154,8 @@ body .main .title .button__animated {
   width: auto;
   display: flex;
   align-items: center;
-  transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
+  transition: background 300ms ease-out, box-shadow 300ms ease-out,
+    opacity 300ms ease-out;
 }
 body .main .title .button__animated:hover {
   background: linear-gradient(#ff79da, #9356dc);
@@ -269,7 +271,7 @@ body .main .restaurants__cards .restaurants__card .card .card__img {
   width: 100%;
   height: 231px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 body .main .restaurants__cards .restaurants__card .card__content {
   display: flex;
@@ -286,12 +288,24 @@ body .main .restaurants__cards .restaurants__card .card__content .card__txt {
   gap: 7px;
   color: #101010;
 }
-body .main .restaurants__cards .restaurants__card .card__content .card__txt .card__title {
+body
+  .main
+  .restaurants__cards
+  .restaurants__card
+  .card__content
+  .card__txt
+  .card__title {
   font-size: 18px;
   margin: 0;
   font-weight: bold;
 }
-body .main .restaurants__cards .restaurants__card .card__content .card__txt .card__subtitle {
+body
+  .main
+  .restaurants__cards
+  .restaurants__card
+  .card__content
+  .card__txt
+  .card__subtitle {
   font-size: 17px;
   font-weight: 300;
   margin: 0;
@@ -309,7 +323,13 @@ body .main .restaurants__cards .restaurants__card .newtag {
 body .main .restaurants .like {
   display: none;
 }
-body .main .restaurants .like:checked + label .restaurants__like .restaurants__like--bg {
+body
+  .main
+  .restaurants
+  .like:checked
+  + label
+  .restaurants__like
+  .restaurants__like--bg {
   display: inline-block;
   background: linear-gradient(45deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
@@ -317,15 +337,33 @@ body .main .restaurants .like:checked + label .restaurants__like .restaurants__l
   -webkit-text-fill-color: transparent;
   transition: background 0.3s;
 }
-body .main .restaurants .like:checked + label .restaurants__like .restaurants__like--nobg {
+body
+  .main
+  .restaurants
+  .like:checked
+  + label
+  .restaurants__like
+  .restaurants__like--nobg {
   display: none;
 }
-body .main .restaurants .like:not(:checked) + label .restaurants__like .restaurants__like--nobg {
+body
+  .main
+  .restaurants
+  .like:not(:checked)
+  + label
+  .restaurants__like
+  .restaurants__like--nobg {
   display: inline-block;
   color: #101010;
   font-weight: 200;
 }
-body .main .restaurants .like:not(:checked) + label .restaurants__like .restaurants__like--bg {
+body
+  .main
+  .restaurants
+  .like:not(:checked)
+  + label
+  .restaurants__like
+  .restaurants__like--bg {
   display: none;
 }
 body .main .restaurants .like + label {
@@ -422,14 +460,13 @@ body .footer .footer__link--icon {
     grid-template-columns: 1fr 1fr;
     row-gap: 30px;
     -moz-column-gap: 50px;
-         column-gap: 50px;
+    column-gap: 50px;
   }
   body .main .restaurants__cards .card__img {
     max-height: 191px;
   }
   body .footer {
     display: flex;
-    /*flex-direction: row-reverse;*/
     align-items: center;
     justify-content: center;
     gap: 16px;
@@ -513,7 +550,7 @@ body .footer .footer__link--icon {
     grid-template-columns: 1fr 1fr;
     row-gap: 30px;
     -moz-column-gap: 70px;
-         column-gap: 70px;
+    column-gap: 70px;
   }
   body .footer {
     display: flex;
@@ -597,7 +634,7 @@ body .mainrest {
 body .mainrest .banner__img {
   height: 18rem;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 body .mainrest .restaurant {
@@ -633,7 +670,12 @@ body .mainrest .restaurant__header #like + label .restaurant__like--nobg {
 body .mainrest .restaurant__header #like + label .restaurant__like--bg {
   display: none;
 }
-body .mainrest .restaurant__header #like:checked + label .restaurant__like--nobg {
+body
+  .mainrest
+  .restaurant__header
+  #like:checked
+  + label
+  .restaurant__like--nobg {
   display: none;
 }
 body .mainrest .restaurant__header #like:checked + label .restaurant__like--bg {
@@ -703,24 +745,52 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content {
   justify-content: space-between;
   align-items: center;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest__content
+  .cardrest__txt {
   display: block;
   flex: 1;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest__content
+  .cardrest__txt
+  .cardrest__title {
   font-weight: 500;
   font-size: 18px;
   margin: 0;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title h4 {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest__content
+  .cardrest__txt
+  .cardrest__title
+  h4 {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 18px;
   margin: 0;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__subtitle {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest__content
+  .cardrest__txt
+  .cardrest__subtitle {
   font-weight: 300;
   font-size: 15px;
   margin: 0;
@@ -736,7 +806,13 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__price {
   bottom: 15px;
   transition: transform 0.25s ease-out;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__confirmation {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  .menu__confirmation {
   position: absolute;
   right: -59px;
   top: 50%;
@@ -750,32 +826,86 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__con
   align-items: center;
   transition: right 0.25s ease-out;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__confirmation .menu__wrapicon {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  .menu__confirmation
+  .menu__wrapicon {
   border-radius: 50%;
   padding: 5px;
   background-color: #ffffff;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__confirmation .menu__wrapicon .menu__icon {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  .menu__confirmation
+  .menu__wrapicon
+  .menu__icon {
   color: #99e2d0;
   font-size: 1.5rem;
   transition: 0.25s ease-in-out;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest:hover .menu__confirmation {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest:hover
+  .menu__confirmation {
   right: 0;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest:hover .cardrest__price {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest:hover
+  .cardrest__price {
   transform: translateX(-59px);
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest input[type=checkbox] {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  input[type="checkbox"] {
   display: none;
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest input[type=checkbox]:checked ~ .cardrest__content .cardrest__price {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  input[type="checkbox"]:checked
+  ~ .cardrest__content
+  .cardrest__price {
   transform: translateX(-59px);
 }
-body .mainrest .restaurant .menu__list .cardrest__container .cardrest input[type=checkbox]:checked ~ .menu__confirmation {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  .cardrest
+  input[type="checkbox"]:checked
+  ~ .menu__confirmation {
   right: 0;
 }
-body .mainrest .restaurant .menu__list .cardrest__container input.confirmation__cardrest + label {
+body
+  .mainrest
+  .restaurant
+  .menu__list
+  .cardrest__container
+  input.confirmation__cardrest
+  + label {
   display: block;
   width: 100%;
 }
@@ -794,7 +924,8 @@ body .mainrest .restaurant .button__animated {
   justify-content: center;
   align-self: center;
   margin-bottom: 20px;
-  transition: background 300ms ease-out, box-shadow 300ms ease-out, opacity 300ms ease-out;
+  transition: background 300ms ease-out, box-shadow 300ms ease-out,
+    opacity 300ms ease-out;
 }
 body .mainrest .restaurant .button__animated:hover {
   background: linear-gradient(#ff79da, #9356dc);
@@ -863,7 +994,6 @@ body .footer .footer__link--icon {
   }
   body .footer {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     gap: 16px;
