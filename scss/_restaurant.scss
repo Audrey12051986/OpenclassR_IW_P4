@@ -477,12 +477,12 @@ body {
       gap: 16px;
       background-color: $bg-color-footer;
       color: $bg-color-section2;
-      padding: 22px 25px;
+      padding: 30px 25px;
       flex-wrap: nowrap;
       height: 114px;
 
       &__title {
-        padding: 0 30px;
+        width: 139px;
         height: 27px;
         margin-bottom: 2px;
       }

@@ -602,8 +602,8 @@ body {
 
           .button {
             width: auto;
-            flex-grow: 1; // Pour s'assurer que les boutons prennent l'espace disponible
-            margin: 10px; // Pour ajouter un peu d'espace entre les boutons
+            flex-grow: 1;
+            margin: 10px;
           }
         }
       }
@@ -637,11 +637,11 @@ body {
       gap: 16px;
       background-color: $bg-color-footer;
       color: $bg-color-section2;
-      padding: 22px 25px;
+      padding: 30px 25px;
       height: 114px;
 
       &__title {
-        padding: 0 30px;
+        width: 139px;
         height: 27px;
         margin-bottom: 2px;
       }

@@ -473,7 +473,6 @@ body .footer .footer__link--icon {
     background-color: #353535;
     color: #ffffff;
     padding: 22px 25px;
-    /*flex-wrap: nowrap;*/
     height: 114px;
   }
   body .footer__title {
@@ -560,12 +559,11 @@ body .footer .footer__link--icon {
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
-    padding: 22px 25px;
-    /*flex-wrap: nowrap;*/
+    padding: 30px 25px;
     height: 114px;
   }
   body .footer__title {
-    padding: 0 30px;
+    width: 139px;
     height: 27px;
     margin-bottom: 2px;
   }
@@ -1061,12 +1059,12 @@ body .footer .footer__link--icon {
     gap: 16px;
     background-color: #353535;
     color: #ffffff;
-    padding: 22px 25px;
+    padding: 30px 25px;
     flex-wrap: nowrap;
     height: 114px;
   }
   body .footer__title {
-    padding: 0 30px;
+    width: 139px;
     height: 27px;
     margin-bottom: 2px;
   }
