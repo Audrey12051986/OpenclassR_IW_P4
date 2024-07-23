@@ -211,6 +211,7 @@ body {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                overflow: hidden;
 
                 .cardrest__txt {
                   display: block;
@@ -225,8 +226,6 @@ body {
 
                     h4 {
                       font-family: $font-family-1;
-                      font-weight: 300;
-                      font-size: 18px;
                       margin: 0;
                     }
                   }
