@@ -697,14 +697,16 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  position: relative;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt {
-  flex-grow: 1;
-  margin-right: 10px;
+  width: 60%;
   min-width: 0;
   overflow: hidden;
-  width: 41px;
+  /*transition: padding-right 450ms ease-in-out;*/
+  /* &:hover {
+    padding-right: 75px;
+  }*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title,
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__subtitle {
@@ -719,9 +721,6 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .
   margin: 0;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  /*white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title h4 {
   font-family: "Roboto", sans-serif;
@@ -734,23 +733,18 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .
   font-weight: 300;
   font-size: 15px;
   margin: 0;
-  /*p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__price {
-  flex-shrink: 0;
+  /*flex-shrink: 0;*/
   margin-left: 10px;
-  /*position: absolute;*/
+  position: absolute;
   display: flex;
   align-items: flex-end;
   font-weight: 700;
   font-size: 15px;
   color: #353535;
-  /* right: 15px;
-  bottom: 15px;*/
+  right: 5px;
+  bottom: 1px;
   transition: transform 0.25s ease-out;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__confirmation {
@@ -866,11 +860,8 @@ body .footer .footer__link--icon {
 /****** Media queries ***********/
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  .cardrest__title,
-  .cardrest__subtitle {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .mobile-only {
+    display: flex;
   }
 }
 /* Medium devices (tablets, less/equal than 1024px) */
