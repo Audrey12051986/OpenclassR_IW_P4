@@ -211,11 +211,22 @@ body {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                overflow: hidden;
+                padding: 10px;
 
                 .cardrest__txt {
-                  display: block;
-                  flex: 1;
+                  flex-grow: 1; // Permet au texte de prendre tout l'espace disponible
+                  margin-right: 10px; // Espace entre le texte et le prix
+                  min-width: 0; // Important pour que text-overflow fonctionne correctement avec flexbox
+                  overflow: hidden; // Assure que le conteneur masque tout débordement
+                  width: calc(100px - 59px);
+
+                  .cardrest__title,
+                  .cardrest__subtitle {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 100%; // Limite la largeur maximale à 100% du conteneur parent
+                  }
 
                   .cardrest__title {
                     font-weight: 500;
@@ -223,10 +234,16 @@ body {
                     margin: 0;
                     font-family: $font-family-1;
                     text-decoration: none;
+                    /*white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;*/
 
                     h4 {
                       font-family: $font-family-1;
                       margin: 0;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                     }
                   }
 
@@ -234,19 +251,27 @@ body {
                     font-weight: 300;
                     font-size: 15px;
                     margin: 0;
+
+                    /*p {
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }*/
                   }
                 }
               }
 
               &__price {
-                position: absolute;
+                flex-shrink: 0;
+                margin-left: 10px; // Espace entre le prix et le texte (optionnel)
+                /*position: absolute;*/
                 display: flex;
                 align-items: flex-end;
                 font-weight: 700;
                 font-size: 15px;
                 color: $bg-color-footer;
-                right: 15px;
-                bottom: 15px;
+                /* right: 15px;
+                bottom: 15px;*/
                 transition: transform 0.25s ease-out;
               }
 
@@ -379,8 +404,11 @@ body {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  .mobile-only {
-    display: flex;
+  .cardrest__title,
+  .cardrest__subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

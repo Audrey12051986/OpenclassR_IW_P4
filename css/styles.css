@@ -54,7 +54,6 @@ body .loader__page {
   z-index: 1000;
   opacity: 1;
   visibility: visible;
-  animation: 0.5s loading 2000ms forwards;
 }
 body .loader__page .loader {
   border: 10px solid #f6f6f6;
@@ -698,11 +697,21 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
+  padding: 10px;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt {
-  display: block;
-  flex: 1;
+  flex-grow: 1;
+  margin-right: 10px;
+  min-width: 0;
+  overflow: hidden;
+  width: 41px;
+}
+body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title,
+body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title {
   font-weight: 500;
@@ -710,25 +719,38 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .
   margin: 0;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
+  /*white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title h4 {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__subtitle {
   font-weight: 300;
   font-size: 15px;
   margin: 0;
+  /*p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__price {
-  position: absolute;
+  flex-shrink: 0;
+  margin-left: 10px;
+  /*position: absolute;*/
   display: flex;
   align-items: flex-end;
   font-weight: 700;
   font-size: 15px;
   color: #353535;
-  right: 15px;
-  bottom: 15px;
+  /* right: 15px;
+  bottom: 15px;*/
   transition: transform 0.25s ease-out;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest .menu__confirmation {
@@ -844,8 +866,11 @@ body .footer .footer__link--icon {
 /****** Media queries ***********/
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  .mobile-only {
-    display: flex;
+  .cardrest__title,
+  .cardrest__subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 /* Medium devices (tablets, less/equal than 1024px) */
