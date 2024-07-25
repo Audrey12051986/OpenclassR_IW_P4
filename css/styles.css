@@ -700,13 +700,9 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content {
   position: relative;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt {
-  width: 60%;
+  width: 65%;
   min-width: 0;
   overflow: hidden;
-  /*transition: padding-right 450ms ease-in-out;*/
-  /* &:hover {
-    padding-right: 75px;
-  }*/
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__title,
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .cardrest__txt .cardrest__subtitle {
@@ -735,11 +731,8 @@ body .mainrest .restaurant .menu__list .cardrest__container .cardrest__content .
   margin: 0;
 }
 body .mainrest .restaurant .menu__list .cardrest__container .cardrest__price {
-  /*flex-shrink: 0;*/
   margin-left: 10px;
   position: absolute;
-  display: flex;
-  align-items: flex-end;
   font-weight: 700;
   font-size: 15px;
   color: #353535;

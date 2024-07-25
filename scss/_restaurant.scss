@@ -214,14 +214,9 @@ body {
                 position: relative;
 
                 .cardrest__txt {
-                  width: 60%;
-                  min-width: 0; // Important pour que text-overflow fonctionne correctement avec flexbox
-                  overflow: hidden; // Assure que le conteneur masque tout débordement
-                  /*transition: padding-right 450ms ease-in-out;*/
-
-                  /* &:hover {
-                    padding-right: 75px;
-                  }*/
+                  width: 65%;
+                  min-width: 0;
+                  overflow: hidden;
 
                   .cardrest__title,
                   .cardrest__subtitle {
@@ -256,11 +251,8 @@ body {
               }
 
               &__price {
-                /*flex-shrink: 0;*/
                 margin-left: 10px;
                 position: absolute;
-                display: flex;
-                align-items: flex-end;
                 font-weight: 700;
                 font-size: 15px;
                 color: $bg-color-footer;
